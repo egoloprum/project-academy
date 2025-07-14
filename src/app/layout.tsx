@@ -1,6 +1,6 @@
-import type { Metadata } from "next";
-import { Space_Grotesk } from "next/font/google";
-import "./globals.css";
+import type { Metadata } from 'next'
+import { Space_Grotesk } from 'next/font/google'
+import './globals.css'
 
 const groteskSans = Space_Grotesk({
   weight: '500',
@@ -8,22 +8,18 @@ const groteskSans = Space_Grotesk({
 })
 
 export const metadata: Metadata = {
-  title: "Internship manager",
-  description: "Academy task",
-};
+  title: 'Internship manager',
+  description: 'Academy task'
+}
 
 export default function RootLayout({
-  children,
+  children
 }: Readonly<{
-  children: React.ReactNode;
+  children: React.ReactNode
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${groteskSans.className} antialiased`}
-      >
-        {children}
-      </body>
+      <body className={`${groteskSans.className} antialiased`}>{children}</body>
     </html>
-  );
+  )
 }

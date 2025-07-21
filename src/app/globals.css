@@ -71,7 +71,7 @@
 }
 
 body {
-  background-color: black;
+  background-color: var(--primary-main);
 }
 
 ::view-transition-group(root) {

@@ -16,7 +16,9 @@ interface ContentWidgetProps {}
 export const ContentWidget: FC<ContentWidgetProps> = ({}) => {
   return (
     <div className="mx-[156px] text-(--white-main) flex justify-between gap-[160px]">
-      <Main1 />
+      <div className="w-full">
+        <Main1 />
+      </div>
       <div className="flex flex-col gap-[32px] max-w-[520px] w-full">
         <p className="text-[36px] font-bold">Направления</p>
         <div className="flex flex-col gap-[16px] text-nowrap">

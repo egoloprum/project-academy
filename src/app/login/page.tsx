@@ -1,9 +1,17 @@
+import { BackToMainBtn } from '@/features/backToMainBtn'
+import { PageWrapper } from '@/widgets/pageWrapper'
 import { FC } from 'react'
 
 interface pageProps {}
 
 const page: FC<pageProps> = ({}) => {
-  return <div>Login</div>
+  return (
+    <PageWrapper>
+      <div className="bg-(--black-main) min-h-[100vh]">
+        <BackToMainBtn />
+      </div>
+    </PageWrapper>
+  )
 }
 
 export default page

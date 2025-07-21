@@ -35,7 +35,8 @@ export const Button: FC<ButtonProps> = ({
       btnColor = 'bg-none'
       break
     case 'gray':
-      btnColor = 'bg-(--gray-300) hover:bg-(--gray-200) active:bg-(--gray-100)'
+      btnColor =
+        'bg-(--white-300) hover:bg-(--white-200) active:bg-(--white-100)'
       break
   }
 

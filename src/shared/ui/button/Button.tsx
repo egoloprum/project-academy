@@ -1,6 +1,7 @@
 'use client'
 
 import clsx from 'clsx'
+import { useTransitionRouter } from 'next-view-transitions'
 import Link from 'next/link'
 import { ButtonHTMLAttributes, FC, LinkHTMLAttributes, ReactNode } from 'react'
 
@@ -44,9 +45,20 @@ export const Button: FC<ButtonProps> = ({
     className
   )
 
+  const router = useTransitionRouter()
+
   if (href) {
     return (
-      <Link className={classNames} {...rest} href={href}>
+      <Link
+        className={classNames}
+        {...rest}
+        href={href}
+        onClick={e => {
+          e.preventDefault()
+          router.push(href, {
+            onTransitionReady: pageAnimation
+          })
+        }}>
         {children}
       </Link>
     )
@@ -56,5 +68,45 @@ export const Button: FC<ButtonProps> = ({
     <button className={classNames} {...rest}>
       {children}
     </button>
+  )
+}
+
+const pageAnimation = () => {
+  document.documentElement.animate(
+    [
+      {
+        opacity: 1,
+        scale: 1,
+        transform: 'translateY(0)'
+      },
+      {
+        opacity: 0.5,
+        scale: 0.9,
+        transform: 'translateY(-100px)'
+      }
+    ],
+    {
+      duration: 1000,
+      easing: 'cubic-bezier(0.76, 0, 0.24, 1)',
+      fill: 'forwards',
+      pseudoElement: '::view-transition-old(root)'
+    }
+  )
+
+  document.documentElement.animate(
+    [
+      {
+        transform: 'translateY(100%)'
+      },
+      {
+        transform: 'translateY(0)'
+      }
+    ],
+    {
+      duration: 1000,
+      easing: 'cubic-bezier(0.76, 0, 0.24, 1)',
+      fill: 'forwards',
+      pseudoElement: '::view-transition-new(root)'
+    }
   )
 }

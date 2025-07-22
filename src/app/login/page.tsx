@@ -7,7 +7,7 @@ interface pageProps {}
 const page: FC<pageProps> = ({}) => {
   return (
     <PageWrapper>
-      <div className="bg-(--black-main) min-h-[100vh]">
+      <div className="bg-(--black-main) min-h-[100vh] h-full">
         <BackToMainBtn />
       </div>
     </PageWrapper>

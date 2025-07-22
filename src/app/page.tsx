@@ -9,7 +9,7 @@ import { PageWrapper } from '@/widgets/pageWrapper'
 export default function Home() {
   return (
     <PageWrapper>
-      <main className="bg-(--black-main) min-h-[100vh] flex flex-col gap-[120px]">
+      <main className="bg-(--black-main) min-h-[100vh] h-full flex flex-col gap-[120px]">
         <Header />
 
         <ContentWidget />

@@ -18,3 +18,6 @@ export { default as ProjectManagerLogo } from './assets/project-manager.svg'
 export { default as CEOLogo } from './assets/ceo.svg'
 export { default as QAEngineerLogo } from './assets/qa-engineer.svg'
 export { default as DesignerLogo } from './assets/designer.svg'
+
+export { default as X } from './assets/x.svg'
+export { default as Eye } from './assets/eye.svg'

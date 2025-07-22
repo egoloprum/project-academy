@@ -11,7 +11,7 @@ interface HeaderProps {}
 export const Header: FC<HeaderProps> = ({}) => {
   return (
     <header className="px-[48px] py-[24px] flex justify-between">
-      <Logo />
+      <Logo className="w-[40px] h-[40px]" />
       <div className="flex gap-[16px]">
         <RegisterBtn />
         <LoginBtn />

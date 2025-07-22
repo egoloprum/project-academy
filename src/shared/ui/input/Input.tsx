@@ -26,7 +26,7 @@ export const Input: FC<InputProps> = ({
       <label htmlFor={id} className="mb-[4px] text-[18px] text-(--white-600)">
         {label}
       </label>
-      <div className="w-full flex items-center gap-[8px] px-[18px] py-[14px] bg-(--white-300) rounded-[8px] outline outline-transparent has-[:focus]:outline-(--primary-main)">
+      <div className="w-full flex items-center gap-[8px] px-[18px] py-[14px] bg-(--white-300) rounded-[8px] outline outline-transparent has-[:focus]:outline-(--primary-main) transition-all duration-300 ease-out">
         <input
           id={id}
           className="w-full outline-none border-none text-(--white-500) hover:text-(--white-main) focus:text-(--white-main) not-[placeholder]:text-(--white-main)"

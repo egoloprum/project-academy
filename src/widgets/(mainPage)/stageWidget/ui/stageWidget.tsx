@@ -1,10 +1,7 @@
 import { SubmitApplicationBtn } from '@/features/submitApplicationBtn'
 import { Main2 } from '@/shared'
-import { FC } from 'react'
 
-interface StageWidgetProps {}
-
-export const StageWidget: FC<StageWidgetProps> = ({}) => {
+export const StageWidget = ({}) => {
   const listItems = [
     {
       header: 'Старт',

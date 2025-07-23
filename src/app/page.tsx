@@ -1,4 +1,3 @@
-import { Button } from '@/shared/ui'
 import { AboutWidget } from '@/widgets/(mainPage)/aboutWidget'
 import { ContentWidget } from '@/widgets/(mainPage)/contentWidget'
 import { StageWidget } from '@/widgets/(mainPage)/stageWidget'

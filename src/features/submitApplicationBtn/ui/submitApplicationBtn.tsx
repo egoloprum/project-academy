@@ -1,11 +1,8 @@
 'use client'
 
 import { Button } from '@/shared/ui'
-import { FC } from 'react'
 
-interface SubmitApplicationBtnProps {}
-
-export const SubmitApplicationBtn: FC<SubmitApplicationBtnProps> = ({}) => {
+export const SubmitApplicationBtn = ({}) => {
   return (
     <Button
       btnType="primary"

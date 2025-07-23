@@ -1,6 +1,7 @@
 'use client'
 
 import { FC, InputHTMLAttributes } from 'react'
+
 import { default as Check } from './assets/check.svg'
 
 interface CheckboxProps extends InputHTMLAttributes<HTMLInputElement> {

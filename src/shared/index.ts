@@ -21,3 +21,5 @@ export { default as DesignerLogo } from './assets/designer.svg'
 
 export { default as X } from './assets/x.svg'
 export { default as Eye } from './assets/eye.svg'
+
+export { default as Avatar } from './assets/avatar.svg'

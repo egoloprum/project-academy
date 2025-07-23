@@ -1,8 +1,4 @@
-import { FC } from 'react'
-
-interface AboutWidgetProps {}
-
-export const AboutWidget: FC<AboutWidgetProps> = ({}) => {
+export const AboutWidget = ({}) => {
   const listItems = [
     {
       header: 'Команда',

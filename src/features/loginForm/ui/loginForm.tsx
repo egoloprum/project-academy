@@ -2,11 +2,8 @@
 
 import { Eye } from '@/shared'
 import { Button, Checkbox, Input } from '@/shared/ui'
-import { FC } from 'react'
 
-interface LoginFormProps {}
-
-export const LoginForm: FC<LoginFormProps> = ({}) => {
+export const LoginForm = ({}) => {
   return (
     <div className="flex flex-col gap-[40px]">
       <form action="" className="flex flex-col gap-[16px]">
@@ -23,7 +20,11 @@ export const LoginForm: FC<LoginFormProps> = ({}) => {
           </span>
         </Button>
 
-        <Button type="button" btnType="clear" className="mt-[8px] w-fit !px-0">
+        <Button
+          type="button"
+          href="/reset-password"
+          btnType="clear"
+          className="mt-[8px] w-fit !px-0">
           <span className="px-[8px] text-[18px]">Не помню пароль</span>
         </Button>
       </form>

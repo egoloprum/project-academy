@@ -1,11 +1,8 @@
 'use client'
 
 import { Button } from '@/shared/ui'
-import { FC } from 'react'
 
-interface LoginBtnProps {}
-
-export const LoginBtn: FC<LoginBtnProps> = ({}) => {
+export const LoginBtn = ({}) => {
   return (
     <Button btnType="primary" href="/login">
       Вход

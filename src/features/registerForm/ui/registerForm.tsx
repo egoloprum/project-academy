@@ -1,13 +1,11 @@
 'use client'
 
+import { Link } from 'next-view-transitions'
+
 import { Eye } from '@/shared'
 import { Button, Input } from '@/shared/ui'
-import { Link } from 'next-view-transitions'
-import { FC } from 'react'
 
-interface RegisterFormProps {}
-
-export const RegisterForm: FC<RegisterFormProps> = ({}) => {
+export const RegisterForm = ({}) => {
   return (
     <div className="flex flex-col gap-[40px]">
       <form action="" className="flex flex-col gap-[16px]">

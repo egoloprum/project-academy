@@ -9,11 +9,8 @@ import {
   SystemAnalystLogo
 } from '@/shared'
 import { Button } from '@/shared/ui'
-import { FC, ReactNode } from 'react'
 
-interface ContentWidgetProps {}
-
-export const ContentWidget: FC<ContentWidgetProps> = ({}) => {
+export const ContentWidget = ({}) => {
   return (
     <div className="mx-[156px] text-(--white-main) flex justify-between gap-[160px]">
       <div className="w-full">

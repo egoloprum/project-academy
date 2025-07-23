@@ -2,11 +2,8 @@
 
 import { Arrow } from '@/shared'
 import { Button } from '@/shared/ui'
-import { FC } from 'react'
 
-interface BackToMainBtnProps {}
-
-export const BackToMainBtn: FC<BackToMainBtnProps> = ({}) => {
+export const BackToMainBtn = ({}) => {
   return (
     <Button
       btnType="clear"

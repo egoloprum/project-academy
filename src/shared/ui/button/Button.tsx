@@ -1,8 +1,8 @@
 'use client'
 
 import clsx from 'clsx'
-import { useTransitionRouter } from 'next-view-transitions'
 import Link from 'next/link'
+import { useTransitionRouter } from 'next-view-transitions'
 import { ButtonHTMLAttributes, FC, LinkHTMLAttributes, ReactNode } from 'react'
 
 type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> &

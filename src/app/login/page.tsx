@@ -2,11 +2,8 @@ import { BackToMainBtn } from '@/features/backToMainBtn'
 import { LoginForm } from '@/features/loginForm'
 import { Logo } from '@/shared'
 import { PageWrapper } from '@/widgets/pageWrapper'
-import { FC } from 'react'
 
-interface pageProps {}
-
-const page: FC<pageProps> = ({}) => {
+const page = ({}) => {
   return (
     <PageWrapper>
       <div className="bg-(--black-main) min-h-[100vh] h-full py-20 flex justify-center items-center">

@@ -2,18 +2,15 @@
 
 import { LogoDzen, LogoFooter, LogoMail, LogoTelegram, LogoVk } from '@/shared'
 import { Button } from '@/shared/ui'
-import { FC } from 'react'
 
-interface FooterProps {}
-
-export const Footer: FC<FooterProps> = ({}) => {
+export const Footer = ({}) => {
   return (
     <footer className="px-[156px] py-[80px] flex justify-between bg-(--white-100)">
       <section className="flex flex-col gap-[24px]">
         <LogoFooter />
         <div className="text-(--white-main) flex flex-col gap-[16px]">
           <p>© 2024 Академия Абдрашитова</p>
-          <p>ООО "Рэд Кэт"</p>
+          <p>ООО &quotРэд Кэт&quot</p>
           <p>ИНН 7000010643</p>
         </div>
       </section>

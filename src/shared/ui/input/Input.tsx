@@ -1,7 +1,8 @@
 'use client'
 
-import { X } from '@/shared'
 import { FC, InputHTMLAttributes, ReactNode } from 'react'
+
+import { X } from '@/shared'
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   isDisabled?: boolean

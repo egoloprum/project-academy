@@ -7,7 +7,7 @@ import { Button, Input } from '@/shared/ui'
 
 export const RegisterForm = ({}) => {
   return (
-    <div className="flex flex-col gap-[40px]">
+    <div className="flex flex-col xl:gap-[40px] lg:gap-[36px] md:gap-[32px] gap-[28px]">
       <form action="" className="flex flex-col gap-[16px]">
         <Input label="Электронная почта" type="email" />
         <Input label="Пароль" type="password">

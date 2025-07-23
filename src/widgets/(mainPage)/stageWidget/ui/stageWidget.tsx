@@ -26,16 +26,16 @@ export const StageWidget = ({}) => {
   ]
 
   return (
-    <div className="mx-[156px] text-(--white-main) flex flex-col gap-[32px]">
+    <div className="2xl:mx-[156px] xl:mx-[120px] lg:mx-[74px] mx-[24px] sm:mx-[32px] md:mx-[48px] text-(--white-main) flex flex-col gap-[32px]">
       <p className="text-[36px] font-bold text-center">Этапы стажировки</p>
-      <div className="flex gap-[24px]">
-        <ul className="grid grid-cols-2 gap-[18px] shrink">
+      <div className="flex 2xl:flex-row flex-col gap-[24px]">
+        <ul className="grid grid-cols-1 md:grid-cols-2 gap-[18px]">
           {listItems.map((item, index) => (
             <li
               key={index}
-              className="bg-(--white-200) rounded-[16px] flex flex-col gap-[24px] 2xl:p-[32px]">
+              className="bg-(--white-200) rounded-[16px] flex flex-col gap-[24px] p-[32px] 2xl:max-w-[455px]">
               <p className="flex gap-[16px] items-center text-[24px] font-bold">
-                <span className="border-2 border-(--primary-main) rounded-[12px] 2xl:h-[66px] aspect-square flex justify-center items-center">
+                <span className="border-2 border-(--primary-main) rounded-[12px] h-[66px] aspect-square flex justify-center items-center">
                   {index + 1}
                 </span>
                 <span>{item.header}</span>
@@ -44,8 +44,8 @@ export const StageWidget = ({}) => {
             </li>
           ))}
         </ul>
-        <div className="w-full">
-          <Main2 />
+        <div className="flex justify-center">
+          <Main2 className="hidden lg:block" />
         </div>
       </div>
       <div className="flex justify-center">

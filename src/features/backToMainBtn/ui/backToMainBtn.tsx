@@ -6,9 +6,9 @@ import { Button } from '@/shared/ui'
 export const BackToMainBtn = ({}) => {
   return (
     <Button
-      btnType="clear"
+      btnType="gray"
       href="/"
-      className="text-(--white-main) gap-[4px] w-fit absolute top-[56px] left-[65px] text-[18px]">
+      className="text-(--white-main) gap-[4px] w-fit fixed top-[56px] left-[24px] md:left-[65px] text-[18px]">
       <Arrow />
       <span className="px-[8px]">Назад на главную</span>
     </Button>

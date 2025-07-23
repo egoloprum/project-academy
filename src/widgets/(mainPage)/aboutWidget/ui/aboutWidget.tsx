@@ -23,13 +23,13 @@ export const AboutWidget = ({}) => {
   ]
 
   return (
-    <div className="mx-[156px] text-(--white-main) flex flex-col gap-[32px]">
+    <div className="2xl:mx-[156px] xl:mx-[120px] lg:mx-[74px] mx-[24px] sm:mx-[32px] md:mx-[48px] text-(--white-main) flex flex-col gap-[32px]">
       <p className="text-[36px] font-bold w-full text-center">О стажировке</p>
-      <ul className="flex gap-[24px]">
+      <ul className="grid 2xl:grid-cols-4 md:grid-cols-2 gap-[24px]">
         {listItems.map((item, index) => (
           <li
             key={index}
-            className="p-[24px] flex flex-col gap-[24px] bg-(--white-200) rounded-[12px] w-full">
+            className="p-[24px] flex flex-col gap-[24px] bg-(--white-200) rounded-[12px] w-full 2xl:max-w-[384px] min-h-[250px]">
             <p className="text-[24px] font-bold border-2 border-(--primary-main) rounded-[16px] px-[24px] py-[16px]">
               {item.header}
             </p>

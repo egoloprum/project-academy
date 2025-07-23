@@ -42,7 +42,7 @@ export const Button: FC<ButtonProps> = ({
 
   const classNames = clsx(
     btnColor,
-    'rounded-[8px] px-[14px] py-[12px] sm:px-[16px] sm:py-[14px] md:px-[18px] md:py-[16px] h-[32px] sm:h-[40px] md:h-[48px] flex justify-center items-center cursor-pointer transition-all duration-300 ease-out',
+    'rounded-[8px] px-[14px] py-[12px] sm:px-[16px] sm:py-[14px] md:px-[18px] md:py-[16px] h-[48px] lg:h-[56px] flex justify-center items-center cursor-pointer transition-all duration-300 ease-out',
     className
   )
 

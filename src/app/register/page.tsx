@@ -1,6 +1,4 @@
-'use client'
-
-import Cookies from 'js-cookie'
+import { cookies } from 'next/headers'
 import { redirect } from 'next/navigation'
 
 import { BackToMainBtn } from '@/features/backToMainBtn'
@@ -8,10 +6,13 @@ import { RegisterForm } from '@/features/registerForm'
 import { Logo } from '@/shared'
 import { PageWrapper } from '@/widgets/pageWrapper'
 
-const page = ({}) => {
-  const authToken = Cookies.get('authToken')
+const page = async ({}) => {
+  const cookieStore = await cookies()
+  const authToken = cookieStore.get('authToken')
 
-  if (authToken) {
+  const userId = authToken?.value
+
+  if (userId) {
     redirect('/profile')
   }
 

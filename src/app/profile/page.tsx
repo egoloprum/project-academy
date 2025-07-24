@@ -1,14 +1,17 @@
-'use client'
-
-import Cookies from 'js-cookie'
+import { cookies } from 'next/headers'
 import { redirect } from 'next/navigation'
 
 import { PageWrapper } from '@/widgets/pageWrapper'
 
-const page = ({}) => {
-  const authToken = Cookies.get('authToken')
+const page = async ({}) => {
+  const cookieStore = await cookies()
+  const authToken = cookieStore.get('authToken')
 
-  if (!authToken) {
+  const userId = authToken?.value
+
+  console.log('authToken', authToken)
+
+  if (!userId) {
     redirect('/login')
   }
 

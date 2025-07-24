@@ -1,9 +1,21 @@
+import { cookies } from 'next/headers'
+import { redirect } from 'next/navigation'
+
 import { BackToMainBtn } from '@/features/backToMainBtn'
 import { ResetPasswordForm } from '@/features/resetPasswordForm'
 import { Logo } from '@/shared'
 import { PageWrapper } from '@/widgets/pageWrapper'
 
-const page = ({}) => {
+const page = async ({}) => {
+  const cookieStore = await cookies()
+  const authToken = cookieStore.get('authToken')
+
+  const userId = authToken?.value
+
+  if (userId) {
+    redirect('/profile')
+  }
+
   return (
     <PageWrapper>
       <div className="bg-(--black-main) min-h-[100vh] h-full py-20 px-[24px] flex justify-center items-center">

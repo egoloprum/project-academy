@@ -93,3 +93,24 @@ body {
   z-index: 1;
   animation: none !important;
 }
+
+input:-webkit-autofill {
+  background-color: transparent !important;
+  -webkit-box-shadow: 0 0 0px 1000px transparent !important;
+  -webkit-text-fill-color: #fff !important;
+}
+input:-webkit-autofill::first-line {
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  transition: background-color 5000s ease-in-out 0s !important;
+}
+
+input:-moz-autofill {
+  background-color: transparent !important;
+  -webkit-text-fill-color: #fff !important;
+}

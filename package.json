@@ -10,6 +10,7 @@
     "lint:fix": "next lint --fix && prettier --write ."
   },
   "dependencies": {
+    "@hookform/resolvers": "^5.1.1",
     "clsx": "^2.1.1",
     "eslint-config-prettier": "^10.1.1",
     "eslint-plugin-boundaries": "^5.0.1",
@@ -17,18 +18,21 @@
     "eslint-plugin-prettier": "^5.2.3",
     "eslint-plugin-unused-imports": "^4.1.4",
     "framer-motion": "^12.23.6",
+    "js-cookie": "^3.0.5",
     "lucide-react": "^0.515.0",
     "next": "15.3.5",
     "next-view-transitions": "^0.3.4",
     "prettier": "^3.5.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "react-hook-form": "^7.58.0"
+    "react-hook-form": "^7.61.0",
+    "zod": "^4.0.8"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
     "@svgr/webpack": "^8.1.0",
     "@tailwindcss/postcss": "^4",
+    "@types/js-cookie": "^3.0.6",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",

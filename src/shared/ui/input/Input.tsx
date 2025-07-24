@@ -42,7 +42,9 @@ export const Input: FC<InputProps> = ({
           </button>
         )}
       </div>
-      {content && <span>{content}</span>}
+      {content && (
+        <span className="text-[14px] text-(--error-main)">{content}</span>
+      )}
     </div>
   )
 }

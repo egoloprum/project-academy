@@ -1,9 +1,20 @@
+'use client'
+
+import Cookies from 'js-cookie'
+import { redirect } from 'next/navigation'
+
 import { BackToMainBtn } from '@/features/backToMainBtn'
 import { RegisterForm } from '@/features/registerForm'
 import { Logo } from '@/shared'
 import { PageWrapper } from '@/widgets/pageWrapper'
 
 const page = ({}) => {
+  const authToken = Cookies.get('authToken')
+
+  if (authToken) {
+    redirect('/profile')
+  }
+
   return (
     <PageWrapper>
       <div className="bg-(--black-main) min-h-[100vh] h-full py-20 px-[24px] flex justify-center items-center">

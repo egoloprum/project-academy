@@ -8,7 +8,7 @@ import { PageWrapper } from '@/widgets/pageWrapper'
 const page = ({}) => {
   const authToken = Cookies.get('authToken')
 
-  if (authToken) {
+  if (!authToken) {
     redirect('/login')
   }
 

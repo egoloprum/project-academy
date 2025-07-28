@@ -16,17 +16,20 @@ import { SendApplicationBtn } from '@/features/sendApplicationBtn'
 import { Button } from '@/shared/components/ui/button'
 import { Footer } from '@/widgets/footer'
 import { Header } from '@/widgets/header'
+import { PageWrapper } from '@/widgets/pageWrapper'
 
 export default function Home() {
   return (
-    <main>
-      <Header />
-      <HeroSection />
-      <DirectionsSection />
-      <AboutSection />
-      <StagesSection />
-      <Footer />
-    </main>
+    <PageWrapper>
+      <main className="bg-black">
+        <Header />
+        <HeroSection />
+        <DirectionsSection />
+        <AboutSection />
+        <StagesSection />
+        <Footer />
+      </main>
+    </PageWrapper>
   )
 }
 

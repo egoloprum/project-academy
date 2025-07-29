@@ -1,9 +1,9 @@
 'use client'
 
+import { motion } from 'framer-motion'
 import Cookies from 'js-cookie'
 import { FC } from 'react'
 
-import { Button } from '@/shared/components/ui/button'
 import { useAnimatedRouter } from '@/shared/lib/hooks'
 
 interface LoginAsBtnProps {
@@ -20,11 +20,13 @@ export const LoginAsBtn: FC<LoginAsBtnProps> = ({ type }) => {
   }
 
   return (
-    <Button
-      className="bg-lime-300 hover:bg-lime-400 active:bg-lime-500 text-black text-xl max-w-108 w-full py-6 flex gap-1 cursor-pointer"
-      onClick={() => clickHandler(type)}>
+    <motion.button
+      className="bg-lime-300 hover:bg-lime-400 active:bg-lime-500 text-black text-xl max-w-108 w-full py-4 rounded-md flex justify-center gap-1 cursor-pointer font-medium"
+      onClick={() => clickHandler(type)}
+      whileHover={{ scale: 1.02 }}
+      whileTap={{ scale: 0.98 }}>
       <span>Войти как</span>
       <span>{type}</span>
-    </Button>
+    </motion.button>
   )
 }

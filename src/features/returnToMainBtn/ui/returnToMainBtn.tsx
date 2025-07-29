@@ -1,19 +1,21 @@
 'use client'
 
+import { motion } from 'framer-motion'
 import { Undo2 } from 'lucide-react'
 
-import { Button } from '@/shared/components/ui/button'
 import { useAnimatedRouter } from '@/shared/lib/hooks'
 
 export const ReturnToMainBtn = ({}) => {
   const { push } = useAnimatedRouter()
 
   return (
-    <Button
-      className="fixed top-6 left-6 text-md cursor-pointer hover:bg-stone-800 active:bg-stone-900"
-      onClick={() => push('/')}>
+    <motion.button
+      className="fixed top-6 left-6 text-md cursor-pointer bg-stone-800 hover:bg-stone-900 active:bg-stone-950 rounded-md py-2 px-4 text-white flex gap-2"
+      onClick={() => push('/')}
+      whileHover={{ scale: 1.02 }}
+      whileTap={{ scale: 0.98 }}>
       <Undo2 />
       <span>Назад на главную</span>
-    </Button>
+    </motion.button>
   )
 }

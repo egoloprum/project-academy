@@ -1,10 +1,19 @@
+import { cookies } from 'next/headers'
 import Image from 'next/image'
+import { redirect } from 'next/navigation'
 
 import { LoginAsBtn } from '@/features/loginAsBtn'
 import { ReturnToMainBtn } from '@/features/returnToMainBtn'
 import { PageWrapper } from '@/widgets/pageWrapper'
 
-const page = ({}) => {
+const page = async ({}) => {
+  const cookieStore = await cookies()
+  const auth = cookieStore.get('authUser')
+
+  if (auth) {
+    return redirect('/profile')
+  }
+
   return (
     <PageWrapper>
       <div className="bg-black min-h-[100vh] flex justify-center items-center relative px-4">

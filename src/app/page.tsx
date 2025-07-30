@@ -1,3 +1,6 @@
+import { cookies } from 'next/headers'
+import { redirect } from 'next/navigation'
+
 import { SendApplicationBtn } from '@/features/sendApplicationBtn'
 import { AboutWidget } from '@/widgets/(mainPage)/aboutWidget'
 import { DirectionsWidget } from '@/widgets/(mainPage)/directionsWidget'
@@ -6,7 +9,14 @@ import { Footer } from '@/widgets/footer'
 import { Header } from '@/widgets/header'
 import { PageWrapper } from '@/widgets/pageWrapper'
 
-export default function Home() {
+export default async function Home() {
+  const cookieStore = await cookies()
+  const auth = cookieStore.get('authUser')
+
+  if (auth) {
+    return redirect('/profile')
+  }
+
   return (
     <PageWrapper>
       <main className="bg-black">

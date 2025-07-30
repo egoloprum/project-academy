@@ -14,9 +14,10 @@ export const LoginAsBtn: FC<LoginAsBtnProps> = ({ type }) => {
   const { push } = useAnimatedRouter()
 
   const clickHandler = (type: string) => {
-    Cookies.set('authUser', type, { expires: 7 })
-
-    push('/profile')
+    try {
+      Cookies.set('authUser', type, { expires: 7 })
+      push('/profile')
+    } catch {}
   }
 
   return (

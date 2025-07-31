@@ -35,8 +35,6 @@ export default async function RootLayout({
 
   const userType = auth && isUserType(auth.value) ? auth.value : undefined
 
-  console.log('userType', userType)
-
   return (
     <ViewTransitions>
       <html lang="en">

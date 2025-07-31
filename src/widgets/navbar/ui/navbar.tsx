@@ -37,7 +37,7 @@ export const Navbar: FC<NavbarProps> = ({ userType }) => {
   const paths = pathConfig[userType] ?? []
 
   return (
-    <div className="py-6 px-6 sm:px-12 md:px-24 flex gap-4 justify-between items-center border-b border-stone-900 bg-black text-white">
+    <div className="py-6 px-6 sm:px-12 md:px-24 flex gap-4 justify-between items-center border-b border-stone-900 bg-black text-white max-h-24">
       <Image src="/logo.svg" width={50} height={50} alt="logo" />
 
       <ul className="hidden lg:flex flex-wrap justify-center">

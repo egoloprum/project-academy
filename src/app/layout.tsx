@@ -4,6 +4,7 @@ import './globals.css'
 import { cookies } from 'next/headers'
 import { ViewTransitions } from 'next-view-transitions'
 
+import { isUserType } from '@/shared'
 import { Navbar } from '@/widgets/navbar'
 
 const geistSans = Geist({
@@ -19,10 +20,6 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: 'Internship planner',
   description: 'Internship project'
-}
-
-function isUserType(value: string): value is 'intern' | 'mentor' | 'admin' {
-  return ['intern', 'mentor', 'admin'].includes(value)
 }
 
 export default async function RootLayout({

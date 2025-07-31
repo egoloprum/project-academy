@@ -56,7 +56,7 @@ export const UserDropdown: FC<UserDropdownProps> = ({ paths, userType }) => {
             <span className="text-bold md:text-xl">Иван Иванов</span>
             <span className="text-gray-400">{userTypes[userType]}</span>
           </p>
-          <Image src="avatar.svg" width={60} height={60} alt="avatar" />
+          <Image src="avatar.svg" width={50} height={50} alt="avatar" />
           <ChevronDown />
         </motion.button>
       </DropdownMenuTrigger>

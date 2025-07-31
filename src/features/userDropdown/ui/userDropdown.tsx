@@ -1,9 +1,10 @@
 'use client'
 
+import axios from 'axios'
 import { motion } from 'framer-motion'
-import Cookies from 'js-cookie'
 import { ChevronDown, LogOut } from 'lucide-react'
 import Image from 'next/image'
+import { useRouter } from 'next/navigation'
 import { FC } from 'react'
 
 import {
@@ -33,12 +34,17 @@ const userTypes = {
 }
 
 export const UserDropdown: FC<UserDropdownProps> = ({ paths, userType }) => {
+  const router = useRouter()
+
   const { push } = useAnimatedRouter()
 
-  const clickHandler = () => {
+  const clickHandler = async () => {
     try {
-      Cookies.remove('authUser')
-      push('/')
+      await axios.post('/api/logout', {
+        params: { userType: userType }
+      })
+
+      router.refresh()
     } catch {}
   }
 

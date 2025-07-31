@@ -1,22 +1,24 @@
 'use client'
 
+import axios from 'axios'
 import { motion } from 'framer-motion'
-import Cookies from 'js-cookie'
+import { useRouter } from 'next/navigation'
 import { FC } from 'react'
-
-import { useAnimatedRouter } from '@/shared/lib/hooks'
 
 interface LoginAsBtnProps {
   type: string
 }
 
 export const LoginAsBtn: FC<LoginAsBtnProps> = ({ type }) => {
-  const { push } = useAnimatedRouter()
+  const router = useRouter()
 
-  const clickHandler = (type: string) => {
+  const clickHandler = async (type: string) => {
     try {
-      Cookies.set('authUser', type, { expires: 7 })
-      push('/profile')
+      await axios.post('/api/login', {
+        params: { userType: type }
+      })
+
+      router.refresh()
     } catch {}
   }
 

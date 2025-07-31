@@ -48,12 +48,8 @@ const eslintConfig = [
             '**/features/**',
             '**/entities/**',
             '**/widgets/**',
-            'next/link',
-            'next/headers',
-            'next/navigation',
-            '@hookform/resolvers/zod',
-            'next/font/**',
-            'next/image'
+            'next/**',
+            '@hookform/resolvers/zod'
           ]
         }
       ],

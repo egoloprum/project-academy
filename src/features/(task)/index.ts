@@ -1,2 +1,7 @@
 export * from './ui/allTaskSelect'
 export * from './ui/taskDeleteBtn'
+export * from './ui/taskToggler'
+export * from './helpers/taskCriteriaContext'
+export * from './ui/criteriaDeleteBtn'
+export * from './ui/criteriaEditBtn'
+export * from './ui/addCriteriaBtn'

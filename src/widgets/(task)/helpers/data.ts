@@ -48,3 +48,18 @@ export const tasksOfGenerations = [
     ]
   }
 ]
+
+export const taskCriteriaData = [
+  {
+    name: 'Критерий 1',
+    points: '10'
+  },
+  {
+    name: 'Критерий 2',
+    points: '10'
+  },
+  {
+    name: 'Критерий 3',
+    points: '10'
+  }
+]

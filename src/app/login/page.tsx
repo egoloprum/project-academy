@@ -2,8 +2,8 @@ import { cookies } from 'next/headers'
 import Image from 'next/image'
 import { redirect } from 'next/navigation'
 
-import { LoginAsBtn } from '@/features/loginAsBtn'
-import { ReturnToMainBtn } from '@/features/returnToMainBtn'
+import { LoginAsBtn } from '@/features/(auth)'
+import { ReturnToMainBtn } from '@/features/(unauth)'
 import { PageWrapper } from '@/widgets/pageWrapper'
 
 const page = async ({}) => {

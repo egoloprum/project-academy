@@ -66,7 +66,7 @@ export const DirectionDialog: FC<DirectionDialogProps> = ({ direction }) => {
                 {mode === 'Требования' && (
                   <motion.div
                     className="absolute bottom-0 left-0 right-0 h-0.5 bg-lime-300"
-                    layoutId="underline"
+                    layoutId="directionDialog-underline"
                   />
                 )}
               </motion.div>
@@ -83,7 +83,7 @@ export const DirectionDialog: FC<DirectionDialogProps> = ({ direction }) => {
                 {mode === 'Задачи' && (
                   <motion.div
                     className="absolute bottom-0 left-0 right-0 h-0.5 bg-lime-300"
-                    layoutId="underline"
+                    layoutId="directionDialog-underline"
                   />
                 )}
               </motion.div>

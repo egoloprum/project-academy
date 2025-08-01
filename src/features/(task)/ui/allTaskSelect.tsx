@@ -7,7 +7,7 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue
-} from '@/shared/components/ui/select'
+} from '@/shared/components'
 
 import { generations } from '../helpers/data'
 import { useTaskContext } from '../helpers/taskContext'

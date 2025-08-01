@@ -20,7 +20,7 @@ export const TaskToggler = ({}) => {
           {activeForm === 'task' && (
             <motion.div
               className="absolute bottom-0 left-0 right-0 h-[1.5px] w-full bg-lime-300"
-              layoutId="underline"
+              layoutId="taskToggler-underline"
             />
           )}
         </motion.div>
@@ -36,7 +36,7 @@ export const TaskToggler = ({}) => {
           {activeForm === 'criteria' && (
             <motion.div
               className="absolute bottom-0 left-0 right-0 h-[1.5px] w-full bg-lime-300"
-              layoutId="underline"
+              layoutId="taskToggler-underline"
             />
           )}
         </motion.div>

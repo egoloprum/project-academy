@@ -1,8 +1,7 @@
 import Image from 'next/image'
 import { FC } from 'react'
 
-import { NavbarLinkBtn } from '@/features/navbarLinkBtn'
-import { UserDropdown } from '@/features/userDropdown'
+import { NavbarLinkBtn, UserDropdown } from '@/features/(navbar)'
 
 interface NavbarProps {
   userType: 'intern' | 'mentor' | 'admin'

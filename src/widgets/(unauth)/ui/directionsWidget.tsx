@@ -8,7 +8,7 @@ import {
   Wrench
 } from 'lucide-react'
 
-import { DirectionDialog } from '@/features/directionDialog'
+import { DirectionDialog } from '@/features/(unauth)'
 
 export const DirectionsWidget = ({}) => {
   const directions = [

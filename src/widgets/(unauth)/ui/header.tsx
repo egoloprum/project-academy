@@ -2,7 +2,7 @@
 
 import Image from 'next/image'
 
-import { LoginBtn } from '@/features/loginBtn'
+import { LoginBtn } from '@/features/(auth)'
 
 export const Header = ({}) => {
   return (

@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 
-import { SendApplicationBtn } from '@/features/sendApplicationBtn'
+import { SendApplicationBtn } from '@/features/(unauth)'
 
 import { stagesList } from '../helpers/data'
 

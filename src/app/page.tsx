@@ -1,12 +1,14 @@
 import { cookies } from 'next/headers'
 import { redirect } from 'next/navigation'
 
-import { SendApplicationBtn } from '@/features/sendApplicationBtn'
-import { AboutWidget } from '@/widgets/(mainPage)/aboutWidget'
-import { DirectionsWidget } from '@/widgets/(mainPage)/directionsWidget'
-import { StagesWidget } from '@/widgets/(mainPage)/stagesWidget'
-import { Footer } from '@/widgets/footer'
-import { Header } from '@/widgets/header'
+import { SendApplicationBtn } from '@/features/(unauth)'
+import {
+  AboutWidget,
+  DirectionsWidget,
+  StagesWidget,
+  Footer,
+  Header
+} from '@/widgets/(unauth)'
 import { PageWrapper } from '@/widgets/pageWrapper'
 
 export default async function Home() {

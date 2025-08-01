@@ -3,8 +3,8 @@ import { redirect } from 'next/navigation'
 
 import { ProfileSidebar } from '@/features/(profile)'
 import { ProfileFormProvider } from '@/features/(profile)'
-import { isUserType } from '@/shared'
-import { ProfileContent } from '@/widgets/(profile)/ui/profileContent'
+import { isUserType } from '@/shared/lib'
+import { ProfileContent } from '@/widgets/(profile)'
 
 const page = async ({}) => {
   const cookieStore = await cookies()

@@ -4,8 +4,8 @@ import './globals.css'
 import { cookies } from 'next/headers'
 import { ViewTransitions } from 'next-view-transitions'
 
-import { isUserType } from '@/shared'
-import { Navbar } from '@/widgets/navbar'
+import { isUserType } from '@/shared/lib'
+import { Navbar } from '@/widgets/(auth)'
 
 const geistSans = Geist({
   variable: '--font-geist-sans',

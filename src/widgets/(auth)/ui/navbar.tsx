@@ -24,6 +24,7 @@ const pathConfig = {
     { url: '/task', content: 'Тестовое задание' },
     { url: '/checking', content: 'Проверка' },
     { url: '/rating', content: 'Рейтинг' },
+    { url: '/tasks', content: 'Все задания' },
     { url: '/profile', content: 'Профиль' }
   ],
   intern: [

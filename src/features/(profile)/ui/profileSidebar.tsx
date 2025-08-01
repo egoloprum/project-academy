@@ -20,7 +20,7 @@ export const ProfileSidebar = ({}) => {
           {activeForm === 'info' && (
             <motion.div
               className="absolute bottom-0 left-0 right-0 h-full w-[1.5px] bg-lime-300"
-              layoutId="underline"
+              layoutId="profileSidebar-underline"
             />
           )}
         </motion.div>
@@ -36,7 +36,7 @@ export const ProfileSidebar = ({}) => {
           {activeForm === 'settings' && (
             <motion.div
               className="absolute bottom-0 left-0 right-0 h-full w-[1.5px] bg-lime-300"
-              layoutId="underline"
+              layoutId="profileSidebar-underline"
             />
           )}
         </motion.div>

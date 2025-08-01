@@ -63,3 +63,9 @@ export const taskCriteriaData = [
     points: '10'
   }
 ]
+
+export const taskTimeData = [
+  { value: 3, label: 'дня', progress: 180 },
+  { value: 15, label: 'часов', progress: 270 },
+  { value: 30, label: 'минут', progress: 120 }
+]

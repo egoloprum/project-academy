@@ -2,22 +2,26 @@
 
 import { motion } from 'framer-motion'
 
-import { useTaskCriteria } from '../helpers/taskCriteriaContext'
+import { useTaskCompletion } from '../helpers/taskCompletionContext'
 
-export const TaskToggler = ({}) => {
-  const { activeForm, setActiveForm } = useTaskCriteria()
+export const TaskToggler = ({
+  userType
+}: {
+  userType: 'mentor' | 'intern'
+}) => {
+  const { activeForm, setActiveForm } = useTaskCompletion()
 
   return (
     <div className="flex">
       <motion.button
         className={`w-full text-center cursor-pointer hover:bg-stone-900 active:bg-stone-950`}
-        onClick={() => setActiveForm('task')}>
+        onClick={() => setActiveForm('taskLeft')}>
         <motion.div
-          className="relative p-4"
+          className="relative p-4 h-full flex justify-center items-center"
           whileHover={{ scale: 1.02 }}
           whileTap={{ scale: 0.98 }}>
           <span>Тестовое задание</span>
-          {activeForm === 'task' && (
+          {activeForm === 'taskLeft' && (
             <motion.div
               className="absolute bottom-0 left-0 right-0 h-[1.5px] w-full bg-lime-300"
               layoutId="taskToggler-underline"
@@ -27,13 +31,15 @@ export const TaskToggler = ({}) => {
       </motion.button>
       <motion.button
         className={`w-full text-center cursor-pointer hover:bg-stone-900 active:bg-stone-950`}
-        onClick={() => setActiveForm('criteria')}>
+        onClick={() => setActiveForm('taskRight')}>
         <motion.div
           className="relative p-4"
           whileHover={{ scale: 1.02 }}
           whileTap={{ scale: 0.98 }}>
-          <span>Критерии оценки</span>
-          {activeForm === 'criteria' && (
+          <span>
+            {userType === 'mentor' ? 'Критерии оценки' : 'История прохождения'}
+          </span>
+          {activeForm === 'taskRight' && (
             <motion.div
               className="absolute bottom-0 left-0 right-0 h-[1.5px] w-full bg-lime-300"
               layoutId="taskToggler-underline"

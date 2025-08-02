@@ -1,13 +1,23 @@
-import { TaskEditDialog, TaskSaveDialog, TaskTextarea } from '@/features/(task)'
+import { TaskAddAnswerProvider, TaskTextarea } from '@/features/(task)'
 
 import { taskTimeData } from '../helpers/data'
 
-export const TaskWidget = ({}) => {
+import { TaskAddAnswerContent } from './taskAddAnswerContent'
+
+export const TaskInternWidget = ({}) => {
   return (
     <div className="flex flex-col-reverse lg:flex-row gap-8">
-      <TaskTextarea />
+      <div className="w-full flex flex-col gap-8 sm:gap-12 md:gap-8 lg:gap-16">
+        <TaskTextarea
+          isDisabled={true}
+          defaultValue="Пожалуйста, сделайте то и то, вот так и так, будем вам счастье"
+        />
+        <TaskAddAnswerProvider>
+          <TaskAddAnswerContent />
+        </TaskAddAnswerProvider>
+      </div>
       <div className="flex flex-col sm:flex-row lg:flex-col gap-4">
-        <ul className="flex gap-4 font-medium">
+        <ul className="flex justify-between sm:justify-start w-full gap-4 font-medium">
           {taskTimeData.map((item, index) => (
             <li key={index} className="relative h-24 w-24">
               <svg className="absolute inset-0" viewBox="0 0 100 100">
@@ -40,10 +50,6 @@ export const TaskWidget = ({}) => {
             </li>
           ))}
         </ul>
-        <div className="grid gap-4 w-full">
-          <TaskEditDialog />
-          <TaskSaveDialog />
-        </div>
       </div>
     </div>
   )

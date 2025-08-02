@@ -2,13 +2,14 @@
 
 import { AnimatePresence, motion } from 'framer-motion'
 
-import { useTaskCriteria } from '@/features/(task)'
+import {
+  TaskAddAnswerBtn,
+  TaskAddAnswerForm,
+  useTaskAddAnswer
+} from '@/features/(task)'
 
-import { CriteriaWidget } from './criteriaWidget'
-import { TaskWidget } from './taskWidget'
-
-export const TaskCriteriaContent = ({}) => {
-  const { activeForm } = useTaskCriteria()
+export const TaskAddAnswerContent = ({}) => {
+  const { activeForm } = useTaskAddAnswer()
 
   return (
     <AnimatePresence mode="wait">
@@ -18,7 +19,11 @@ export const TaskCriteriaContent = ({}) => {
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: -10 }}
         transition={{ duration: 0.2 }}>
-        {activeForm === 'task' ? <TaskWidget /> : <CriteriaWidget />}
+        {activeForm === 'formOpen' ? (
+          <TaskAddAnswerForm />
+        ) : (
+          <TaskAddAnswerBtn />
+        )}
       </motion.div>
     </AnimatePresence>
   )

@@ -1,11 +1,11 @@
 import { cookies } from 'next/headers'
 import { redirect } from 'next/navigation'
 
-import { TaskCriteriaProvider, TaskToggler } from '@/features/(task)'
+import { TaskCompletionProvider, TaskToggler } from '@/features/(task)'
 import { isUserType } from '@/shared/lib'
-import { TaskCriteriaContent } from '@/widgets/(task)'
+import { TaskContent } from '@/widgets/(task)'
 
-const page = async ({}) => {
+export default async function page({}) {
   const cookieStore = await cookies()
   const auth = cookieStore.get('authUser')
 
@@ -15,15 +15,17 @@ const page = async ({}) => {
     redirect('/login')
   }
 
+  if (userType === 'admin') {
+    redirect('/profile')
+  }
+
   return (
-    <div className="bg-black min-h-screen text-white px-6 sm:px-12 md:px-24 py-10 flex flex-col gap-8 sm:gap-12 md:gap-8 lg:gap-16">
+    <main className="bg-black min-h-screen text-white px-6 sm:px-12 md:px-24 py-10 flex flex-col gap-8 sm:gap-12 md:gap-8 lg:gap-16">
       <p className="text-2xl font-bold">Тестовое System Analyst / Поток 3</p>
-      <TaskCriteriaProvider>
-        <TaskToggler />
-        <TaskCriteriaContent />
-      </TaskCriteriaProvider>
-    </div>
+      <TaskCompletionProvider>
+        <TaskToggler userType={userType} />
+        <TaskContent userType={userType} />
+      </TaskCompletionProvider>
+    </main>
   )
 }
-
-export default page

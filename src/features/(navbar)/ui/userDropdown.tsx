@@ -60,7 +60,9 @@ export const UserDropdown: FC<UserDropdownProps> = ({ paths, userType }) => {
           <ChevronDown />
         </motion.button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent className="w-68 bg-black hover:bg-black" align="end">
+      <DropdownMenuContent
+        className="w-68 bg-black hover:bg-black border-stone-800"
+        align="end">
         <DropdownMenuGroup className="lg:hidden">
           {paths.map((path: PathItem) => (
             <DropdownMenuItem key={path.content} className="p-0 m-0">

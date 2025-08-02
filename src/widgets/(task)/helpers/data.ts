@@ -69,3 +69,21 @@ export const taskTimeData = [
   { value: 15, label: 'часов', progress: 270 },
   { value: 30, label: 'минут', progress: 120 }
 ]
+
+export const taskHistoryData = [
+  {
+    direction: 'Поток 4',
+    date: '09.06.2025',
+    task: 'QA Тестовое',
+    result: '80%',
+    comment: 'Ура, ура, все соблюдено, чел оч крутой, надо брать'
+  },
+  {
+    direction: 'Поток 3',
+    date: '19.01.2024',
+    task: 'QA Тестовое',
+    result: '40%',
+    comment:
+      'Допущены грубейшие ошибки, не соблюдены критерии отбора и блаблаблаблаблабла, в общем все то, что обычно пишут в отказа'
+  }
+]

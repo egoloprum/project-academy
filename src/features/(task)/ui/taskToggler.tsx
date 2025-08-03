@@ -20,7 +20,10 @@ export const TaskToggler = ({
           className="relative p-4 h-full flex justify-center items-center"
           whileHover={{ scale: 1.02 }}
           whileTap={{ scale: 0.98 }}>
-          <span>Тестовое задание</span>
+          <span
+            className={`font-medium text-gray-400 ${activeForm === 'taskLeft' && 'text-lime-300'}`}>
+            Тестовое задание
+          </span>
           {activeForm === 'taskLeft' && (
             <motion.div
               className="absolute bottom-0 left-0 right-0 h-[1.5px] w-full bg-lime-300"
@@ -36,7 +39,8 @@ export const TaskToggler = ({
           className="relative p-4 h-full flex justify-center items-center"
           whileHover={{ scale: 1.02 }}
           whileTap={{ scale: 0.98 }}>
-          <span>
+          <span
+            className={`font-medium text-gray-400 ${activeForm === 'taskRight' && 'text-lime-300'}`}>
             {userType === 'mentor' ? 'Критерии оценки' : 'История прохождения'}
           </span>
           {activeForm === 'taskRight' && (

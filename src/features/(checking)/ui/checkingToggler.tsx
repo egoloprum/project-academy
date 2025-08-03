@@ -16,7 +16,10 @@ export const CheckingToggler = ({}) => {
           className="relative p-4 h-full flex justify-center items-center"
           whileHover={{ scale: 1.02 }}
           whileTap={{ scale: 0.98 }}>
-          <span>Ожидают проверки</span>
+          <span
+            className={`font-medium text-gray-400 ${activeForm === 'pending' && 'text-lime-300'}`}>
+            Ожидают проверки
+          </span>
           {activeForm === 'pending' && (
             <motion.div
               className="absolute bottom-0 left-0 right-0 h-[1.5px] w-full bg-lime-300"
@@ -32,7 +35,10 @@ export const CheckingToggler = ({}) => {
           className="relative p-4 h-full flex justify-center items-center"
           whileHover={{ scale: 1.02 }}
           whileTap={{ scale: 0.98 }}>
-          <span>Оценено</span>
+          <span
+            className={`font-medium text-gray-400 ${activeForm === 'done' && 'text-lime-300'}`}>
+            Оценено
+          </span>
           {activeForm === 'done' && (
             <motion.div
               className="absolute bottom-0 left-0 right-0 h-[1.5px] w-full bg-lime-300"

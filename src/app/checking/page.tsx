@@ -2,7 +2,7 @@ import { cookies } from 'next/headers'
 import { redirect } from 'next/navigation'
 
 import {
-  CheckingDropdown,
+  CheckingSelect,
   CheckingProvider,
   CheckingToggler
 } from '@/features/(checking)'
@@ -33,7 +33,7 @@ const page = async ({}) => {
             <span>Количество тестовых заданий</span>
             <span className="font-medium ml-2">96</span>
           </p>
-          <CheckingDropdown />
+          <CheckingSelect />
         </div>
         <CheckingContent />
       </CheckingProvider>

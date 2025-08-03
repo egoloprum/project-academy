@@ -13,20 +13,12 @@ import {
 
 const selectData = [
   {
-    value: 'newest',
-    content: 'Сначала новые'
-  },
-  {
-    value: 'oldest',
-    content: 'Сначала старые'
-  },
-  {
     value: 'highest-score',
-    content: 'По убыванию процентов'
+    content: 'По убыванию'
   },
   {
     value: 'lowest-score',
-    content: 'По возрастанию процентов'
+    content: 'По возрастанию'
   },
   {
     value: 'a-z',
@@ -38,11 +30,11 @@ const selectData = [
   }
 ]
 
-export const CheckingSelect = ({}) => {
+export const RatingSortSelect = ({}) => {
   return (
     <Select>
-      <SelectTrigger className="sm:max-w-72 w-full bg-stone-800 border-none">
-        <SelectValue placeholder="Сортировка" defaultValue="newest" />
+      <SelectTrigger className="lg:max-w-48 w-full bg-stone-800 border-none">
+        <SelectValue placeholder="Сортировка" defaultValue="highest-score" />
       </SelectTrigger>
       <SelectContent className="bg-stone-800 border-none">
         <SelectGroup>

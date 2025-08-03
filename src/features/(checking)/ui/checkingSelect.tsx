@@ -11,7 +11,7 @@ import {
   SelectValue
 } from '@/shared/components'
 
-export const CheckingDropdown = ({}) => {
+export const CheckingSelect = ({}) => {
   return (
     <Select>
       <SelectTrigger className="sm:max-w-72 w-full bg-stone-800 border-none">

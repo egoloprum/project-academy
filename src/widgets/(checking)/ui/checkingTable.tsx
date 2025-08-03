@@ -1,3 +1,5 @@
+import { CheckingEachBtn } from '@/features/(checking)'
+
 import { CheckingDataType } from '../helpers/types'
 
 export const CheckingTable = ({
@@ -27,7 +29,9 @@ export const CheckingTable = ({
         <tbody>
           {tableData.map((data, index) => (
             <tr key={index} className="border-b border-stone-800">
-              <td className="p-4 md:py-6 text-nowrap">{data.name}</td>
+              <td className="p-4 md:py-6 text-nowrap">
+                <CheckingEachBtn name={data.name} index={index + 1} />
+              </td>
               <td className="p-4 md:py-6">{data.result}</td>
               <td className="p-4 md:py-6 text-nowrap">{data.date}</td>
               <td className="p-4 md:py-6 max-w-40 min-w-[180px]">

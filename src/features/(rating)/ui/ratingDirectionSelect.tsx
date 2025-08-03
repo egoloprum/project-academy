@@ -1,7 +1,5 @@
 'use client'
 
-import { ArrowUpDown } from 'lucide-react'
-
 import {
   Select,
   SelectContent,
@@ -13,36 +11,40 @@ import {
 
 const selectData = [
   {
-    value: 'newest',
-    content: 'Сначала новые'
+    value: 'backend',
+    content: 'Backend'
   },
   {
-    value: 'oldest',
-    content: 'Сначала старые'
+    value: 'frontend',
+    content: 'Frontend'
   },
   {
-    value: 'highest-score',
-    content: 'По убыванию процентов'
+    value: 'system-analyst',
+    content: 'System Analyst'
   },
   {
-    value: 'lowest-score',
-    content: 'По возрастанию процентов'
+    value: 'project-manager',
+    content: 'Project Manager'
   },
   {
-    value: 'a-z',
-    content: 'От А до Я'
+    value: 'ceo',
+    content: 'CEO'
   },
   {
-    value: 'z-a',
-    content: 'От Я до А'
+    value: 'qa-engineer',
+    content: 'Qa Engineer'
+  },
+  {
+    value: 'ui/ux-designer',
+    content: 'UI/UX Designer'
   }
 ]
 
-export const CheckingSelect = ({}) => {
+export const RatingDirectionSelect = ({}) => {
   return (
     <Select>
-      <SelectTrigger className="sm:max-w-72 w-full bg-stone-800 border-none">
-        <SelectValue placeholder="Сортировка" defaultValue="newest" />
+      <SelectTrigger className="lg:max-w-48 w-full bg-stone-800 border-none">
+        <SelectValue placeholder="Направление" defaultValue="backend" />
       </SelectTrigger>
       <SelectContent className="bg-stone-800 border-none">
         <SelectGroup>
@@ -51,7 +53,6 @@ export const CheckingSelect = ({}) => {
               key={index}
               value={data.value}
               className="focus:bg-stone-900 active:bg-stone-950 text-white focus:text-white">
-              <ArrowUpDown className="w-4 h-4 text-white" />
               <span>{data.content}</span>
             </SelectItem>
           ))}

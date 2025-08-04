@@ -12,35 +12,31 @@ import {
   ChartTooltip,
   ChartTooltipContent
 } from '@/shared/components'
-import { Bar, BarChart, CartesianGrid, XAxis, YAxis } from 'recharts'
+import { Bar, BarChart, CartesianGrid, LabelList, XAxis, YAxis } from 'recharts'
 
 const chartData = [
-  { direction: 'Frontend', accepted: 36, rejected: 60 },
-  { direction: 'Backend', accepted: 25, rejected: 25 },
-  { direction: 'QA', accepted: 108, rejected: 42 },
-  { direction: 'UX/UI', accepted: 121, rejected: 42 },
-  { direction: 'PM', accepted: 61, rejected: 54 },
-  { direction: 'SA', accepted: 58, rejected: 49 },
-  { direction: 'CEO', accepted: 50, rejected: 125 }
+  { direction: 'Frontend', averagePoint: 73 },
+  { direction: 'Backend', averagePoint: 43.5 },
+  { direction: 'QA', averagePoint: 83.5 },
+  { direction: 'UX/UI', averagePoint: 80 },
+  { direction: 'PM', averagePoint: 69 },
+  { direction: 'SA', averagePoint: 75 },
+  { direction: 'CEO', averagePoint: 64 }
 ]
 
 const chartConfig = {
-  accepted: {
-    label: 'Принято',
+  averagePoint: {
+    label: 'Средний балл в %',
     color: 'var(--chart-1)'
-  },
-  rejected: {
-    label: 'Отклонено',
-    color: 'var(--chart-2)'
   }
 } satisfies ChartConfig
 
-export const DashboardApplicationRatioChart = ({}) => {
+export const DashboardTaskPointChart = ({}) => {
   return (
     <Card className="bg-transparent border-none text-white gap-2 sm:gap-4">
       <CardHeader className="p-0">
         <CardTitle className="text-xl sm:text-2xl text-white">
-          Соотношение принятых и отклоненных заявок
+          Средний балл выполненных тестовых заданий
         </CardTitle>
       </CardHeader>
       <CardContent className="bg-stone-900 rounded-md p-2 sm:p-4">
@@ -68,7 +64,7 @@ export const DashboardApplicationRatioChart = ({}) => {
               tickFormatter={value => value.slice(0, 3)}
             />
             <YAxis
-              domain={[0, 200]}
+              domain={[0, 100]}
               tickCount={6}
               tickLine={false}
               axisLine={false}
@@ -77,21 +73,21 @@ export const DashboardApplicationRatioChart = ({}) => {
               cursor={{
                 opacity: 0.1
               }}
-              content={<ChartTooltipContent hideLabel />}
+              content={<ChartTooltipContent hideLabel className="w-43" />}
             />
             <ChartLegend content={<ChartLegendContent />} />
             <Bar
-              dataKey="accepted"
+              dataKey="averagePoint"
               stackId="a"
               fill="oklch(79.2% 0.209 151.711)"
-              radius={[0, 0, 4, 4]}
-            />
-            <Bar
-              dataKey="rejected"
-              stackId="a"
-              fill="oklch(67.3% 0.182 276.935)"
-              radius={[4, 4, 0, 0]}
-            />
+              radius={[4, 4, 4, 4]}>
+              <LabelList
+                position="top"
+                offset={12}
+                className="fill-white"
+                fontSize={12}
+              />
+            </Bar>
           </BarChart>
         </ChartContainer>
       </CardContent>

@@ -3,7 +3,8 @@ import { isUserType } from '@/shared/lib'
 import {
   DashboardAlltimeWidget,
   DashboardApplicationRatioChart,
-  DashboardTable
+  DashboardTable,
+  DashboardTaskPointChart
 } from '@/widgets/(stats)'
 import { cookies } from 'next/headers'
 import { redirect } from 'next/navigation'
@@ -28,8 +29,9 @@ const page = async ({}) => {
       <DashboardAlltimeWidget />
       <DashboardTable />
 
-      <section className="grid xl:grid-cols-2">
+      <section className="grid xl:grid-cols-2 gap-x-8">
         <DashboardApplicationRatioChart />
+        <DashboardTaskPointChart />
       </section>
     </main>
   )

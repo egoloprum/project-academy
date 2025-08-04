@@ -1,6 +1,10 @@
 import { DashboardGoBackBtn } from '@/features/(stats)'
 import { isUserType } from '@/shared/lib'
-import { DashboardAlltimeWidget, DashboardTable } from '@/widgets/(stats)'
+import {
+  DashboardAlltimeWidget,
+  DashboardApplicationRatioChart,
+  DashboardTable
+} from '@/widgets/(stats)'
 import { cookies } from 'next/headers'
 import { redirect } from 'next/navigation'
 
@@ -23,6 +27,10 @@ const page = async ({}) => {
       <DashboardGoBackBtn />
       <DashboardAlltimeWidget />
       <DashboardTable />
+
+      <section className="grid xl:grid-cols-2">
+        <DashboardApplicationRatioChart />
+      </section>
     </main>
   )
 }

@@ -7,3 +7,6 @@ export * from './ui/select'
 export * from './ui/textarea'
 export * from './ui/checkbox'
 export * from './ui/hover-card'
+
+export * from './ui/card'
+export * from './ui/chart'

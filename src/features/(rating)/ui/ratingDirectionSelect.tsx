@@ -44,7 +44,7 @@ export const RatingDirectionSelect = ({}) => {
   return (
     <Select>
       <SelectTrigger className="lg:max-w-48 w-full bg-stone-800 border-none">
-        <SelectValue placeholder="Направление" defaultValue="backend" />
+        <SelectValue placeholder="Выбрать направление" defaultValue="backend" />
       </SelectTrigger>
       <SelectContent className="bg-stone-800 border-none">
         <SelectGroup>

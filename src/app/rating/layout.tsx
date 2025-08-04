@@ -25,7 +25,7 @@ const layout = async ({
   }
 
   return (
-    <main className="bg-black min-h-screen text-white px-6 sm:px-12 md:px-24 py-10 flex flex-col gap-8 sm:gap-12 md:gap-8 lg:gap-16">
+    <main className="bg-black min-h-screen text-white px-6 sm:px-12 md:px-24 py-10 flex flex-col gap-8">
       {userType === 'mentor' && mentor}
       {userType === 'admin' && admin}
     </main>

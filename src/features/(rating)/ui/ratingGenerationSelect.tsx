@@ -32,7 +32,7 @@ export const RatingGenerationSelect = ({}) => {
   return (
     <Select>
       <SelectTrigger className="lg:max-w-48 w-full bg-stone-800 border-none">
-        <SelectValue placeholder="Поток" defaultValue="gen-4" />
+        <SelectValue placeholder="Выбрать поток" defaultValue="gen-4" />
       </SelectTrigger>
       <SelectContent className="bg-stone-800 border-none">
         <SelectGroup>

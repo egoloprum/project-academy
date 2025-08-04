@@ -18,7 +18,7 @@ export const AllTaskSelect = ({}) => {
   return (
     <Select value={selectedGeneration} onValueChange={setSelectedGeneration}>
       <SelectTrigger className="sm:max-w-72 w-full bg-stone-800 border-none">
-        <SelectValue placeholder="Select a generation" defaultValue={4} />
+        <SelectValue placeholder="Выбрать поток" defaultValue={4} />
       </SelectTrigger>
       <SelectContent className="bg-stone-800 border-none">
         <SelectGroup>

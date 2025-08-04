@@ -1,6 +1,6 @@
 import { DashboardGoBackBtn } from '@/features/(stats)'
 import { isUserType } from '@/shared/lib'
-import { DashboardAlltimeWidget } from '@/widgets/(stats)'
+import { DashboardAlltimeWidget, DashboardTable } from '@/widgets/(stats)'
 import { cookies } from 'next/headers'
 import { redirect } from 'next/navigation'
 
@@ -22,6 +22,7 @@ const page = async ({}) => {
     <main className="bg-black min-h-screen text-white px-6 sm:px-12 md:px-24 py-10 flex flex-col gap-8">
       <DashboardGoBackBtn />
       <DashboardAlltimeWidget />
+      <DashboardTable />
     </main>
   )
 }

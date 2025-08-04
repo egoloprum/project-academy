@@ -3,6 +3,7 @@ import { isUserType } from '@/shared/lib'
 import {
   DashboardAlltimeWidget,
   DashboardApplicationRatioChart,
+  DashboardDistributionChart,
   DashboardTable,
   DashboardTaskPointChart
 } from '@/widgets/(stats)'
@@ -32,6 +33,7 @@ const page = async ({}) => {
       <section className="grid xl:grid-cols-2 gap-x-8">
         <DashboardApplicationRatioChart />
         <DashboardTaskPointChart />
+        <DashboardDistributionChart />
       </section>
     </main>
   )

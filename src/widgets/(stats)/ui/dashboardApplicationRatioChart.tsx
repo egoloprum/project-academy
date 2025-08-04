@@ -46,7 +46,7 @@ export const DashboardApplicationRatioChart = ({}) => {
       <CardContent className="bg-stone-900 rounded-md p-2 sm:p-4">
         <ChartContainer
           config={chartConfig}
-          className="bg-stone-800 rounded-sm pb-2">
+          className="bg-stone-800 rounded-sm pb-2 aspect-[16/12] md:aspect-video">
           <BarChart
             accessibilityLayer
             data={chartData}

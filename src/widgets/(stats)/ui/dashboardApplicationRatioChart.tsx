@@ -37,7 +37,7 @@ const chartConfig = {
 
 export const DashboardApplicationRatioChart = ({}) => {
   return (
-    <Card className="bg-transparent border-none text-white gap-2 sm:gap-4">
+    <Card className="bg-transparent border-none text-white gap-2 sm:gap-4 py-0">
       <CardHeader className="p-0">
         <CardTitle className="text-xl sm:text-2xl text-white">
           Соотношение принятых и отклоненных заявок

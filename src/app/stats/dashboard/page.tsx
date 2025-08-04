@@ -1,6 +1,7 @@
 import { DashboardGoBackBtn } from '@/features/(stats)'
 import { isUserType } from '@/shared/lib'
 import {
+  DashboardAgeGroupChart,
   DashboardAlltimeWidget,
   DashboardApplicationRatioChart,
   DashboardDistributionChart,
@@ -38,6 +39,10 @@ const page = async ({}) => {
       </section>
 
       <DashboardPortraitWidget />
+
+      <section className="grid xl:grid-cols-2 gap-8 gap-y-4">
+        <DashboardAgeGroupChart />
+      </section>
     </main>
   )
 }

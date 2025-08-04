@@ -8,3 +8,5 @@ export * from './ui/dashboardTaskPointChart'
 export * from './ui/dashboardDistributionChart'
 
 export * from './ui/dashboardPortraitWidget'
+
+export * from './ui/dashboardAgeGroupChart'

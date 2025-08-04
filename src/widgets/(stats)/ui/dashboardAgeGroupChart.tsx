@@ -1,6 +1,6 @@
 'use client'
 
-import { Label, Pie, PieChart } from 'recharts'
+import { Pie, PieChart } from 'recharts'
 import {
   Card,
   CardContent,
@@ -15,46 +15,40 @@ import {
   ChartTooltip,
   ChartTooltipContent
 } from '@/shared/components'
-import { useEffect, useMemo, useState } from 'react'
 
 const chartData = [
-  { direction: 'Frontend', value: 12, fill: '#c084fc' },
-  { direction: 'Backend', value: 10, fill: '#fb7185' },
-  { direction: 'QA', value: 21, fill: '#22d3ee' },
-  { direction: 'UX/UI', value: 19, fill: '#fb923c' },
-  { direction: 'PM', value: 17, fill: '#818cf8' },
-  { direction: 'SA', value: 17, fill: '#4ade80' },
-  { direction: 'CEO', value: 4, fill: '#facc15' }
+  { age: '40+', value: 5, fill: '#4ade80' },
+  { age: '35-40', value: 8, fill: '#fca5a5' },
+  { age: '30-35', value: 7, fill: '#fed7aa' },
+  { age: '18-21', value: 49, fill: '#60a5fa' },
+  { age: '26-29', value: 10, fill: '#fef08a' },
+  { age: '22-25', value: 21, fill: '#e879f9' }
 ]
 
 const chartConfig = {
-  frontend: {
-    label: 'Frontend',
+  '18-21': {
+    label: '18-21',
     color: 'var(--chart-1)'
   },
-  backend: {
-    label: 'Backend',
+  '22-25': {
+    label: '22-25',
     color: 'var(--chart-2)'
   },
-  qa: {
-    label: 'QA',
+  '26-29': {
+    label: '26-29',
     color: 'var(--chart-3)'
   },
-  ui: {
-    label: 'UX/UI',
+  '30-35': {
+    label: '30-35',
     color: 'var(--chart-4)'
   },
-  pm: {
-    label: 'PM',
+  '35-40': {
+    label: '35-40',
     color: 'var(--chart-5)'
   },
-  sa: {
-    label: 'SA',
+  '40+': {
+    label: '40+',
     color: 'var(--chart-6)'
-  },
-  ceo: {
-    label: 'CEO',
-    color: 'var(--chart-7)'
   }
 } satisfies ChartConfig
 
@@ -62,7 +56,7 @@ const CustomLegendContent = (props: any) => {
   const { payload } = props
 
   return (
-    <div className="flex flex-wrap justify-center gap-x-4 gap-y-1 mt-8 sm:mt-4">
+    <div className="flex flex-wrap justify-center gap-x-4 mt-8 gap-y-1">
       {payload?.map((entry: any, index: number) => (
         <div key={`legend-${index}`} className="flex items-center gap-x-2">
           <div
@@ -108,7 +102,7 @@ const renderCustomizedLabel = (props: any) => {
   const textY = inclinedY
 
   const textAnchor = convertDegree(midAngle) > 180 ? 'end' : 'start'
-  const direction = chartData[index].direction
+  const age = chartData[index].age
   const value = chartData[index].value
 
   return (
@@ -142,7 +136,7 @@ const renderCustomizedLabel = (props: any) => {
         fill="white"
         fontSize={12}>
         <tspan x={textX} dy="-0.5em">
-          {direction}
+          {age}
         </tspan>
         <tspan
           x={textX}
@@ -156,49 +150,20 @@ const renderCustomizedLabel = (props: any) => {
   )
 }
 
-const useWindowSize = () => {
-  const [windowSize, setWindowSize] = useState({
-    width: typeof window !== 'undefined' ? window.innerWidth : 0,
-    height: typeof window !== 'undefined' ? window.innerHeight : 0
-  })
-
-  useEffect(() => {
-    const handleResize = () => {
-      setWindowSize({
-        width: window.innerWidth,
-        height: window.innerHeight
-      })
-    }
-
-    window.addEventListener('resize', handleResize)
-    handleResize()
-
-    return () => window.removeEventListener('resize', handleResize)
-  }, [])
-
-  return windowSize
-}
-
-export function DashboardDistributionChart() {
+export function DashboardAgeGroupChart() {
   const totalPercent = 100
-
-  const { width } = useWindowSize()
-
-  const innerRadius = useMemo(() => {
-    return width < 640 ? 40 : 60
-  }, [width])
 
   return (
     <Card className="bg-transparent border-none text-white gap-2 sm:gap-4 py-0">
       <CardHeader className="p-0">
         <CardTitle className="text-xl sm:text-2xl text-white">
-          Распределение по направлениям
+          Возрастные группы в %
         </CardTitle>
       </CardHeader>
-      <CardContent className="bg-stone-900  rounded-md p-2 sm:p-4 relative">
+      <CardContent className="bg-stone-900 rounded-md p-2 sm:p-4 relative">
         <ChartContainer
           config={chartConfig}
-          className="rounded-sm aspect-[16/12] mt-4 md:aspect-video">
+          className="rounded-sm aspect-[16/14] mt-4 md:aspect-video">
           <PieChart>
             <ChartTooltip
               cursor={false}
@@ -208,32 +173,11 @@ export function DashboardDistributionChart() {
             <Pie
               data={chartData}
               dataKey="value"
-              nameKey="direction"
-              innerRadius={innerRadius}
+              nameKey="age"
               strokeWidth={1}
               label={renderCustomizedLabel}
-              labelLine={false}>
-              <Label
-                content={({ viewBox }) => {
-                  if (viewBox && 'cx' in viewBox && 'cy' in viewBox) {
-                    return (
-                      <text
-                        x={viewBox.cx}
-                        y={viewBox.cy}
-                        textAnchor="middle"
-                        dominantBaseline="middle">
-                        <tspan
-                          x={viewBox.cx}
-                          y={viewBox.cy}
-                          className="fill-white text-xl font-bold">
-                          {totalPercent.toLocaleString()}
-                        </tspan>
-                      </text>
-                    )
-                  }
-                }}
-              />
-            </Pie>
+              labelLine={false}
+            />
           </PieChart>
         </ChartContainer>
       </CardContent>

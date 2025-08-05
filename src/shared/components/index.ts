@@ -10,3 +10,4 @@ export * from './ui/hover-card'
 
 export * from './ui/card'
 export * from './ui/chart'
+export * from './ui/popover'

@@ -1,8 +1,9 @@
 'use client'
 
-import { useAnimatedRouter } from '@/shared/lib'
 import { motion } from 'framer-motion'
 import { Pencil } from 'lucide-react'
+
+import { useAnimatedRouter } from '@/shared/lib'
 
 export const UsersEditBtn = ({}) => {
   const { push } = useAnimatedRouter()

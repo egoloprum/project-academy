@@ -1,4 +1,5 @@
 import { UsersDeleteBtn, UsersEditBtn } from '@/features/(users)'
+
 import { UsersTableData } from '../helpers/data'
 
 export const UsersTable = ({}) => {

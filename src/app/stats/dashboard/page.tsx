@@ -1,7 +1,7 @@
 import { cookies } from 'next/headers'
 import { redirect } from 'next/navigation'
 
-import { DashboardGoBackBtn } from '@/features/(stats)'
+import { GoBackBtn } from '@/shared/components'
 import { isUserType } from '@/shared/lib'
 import {
   DashboardAgeGroupChart,
@@ -30,7 +30,9 @@ const page = async ({}) => {
 
   return (
     <main className="bg-black min-h-screen text-white px-6 sm:px-12 md:px-24 py-10 flex flex-col gap-12">
-      <DashboardGoBackBtn />
+      <GoBackBtn url="/stats">
+        <span>Назад к списку</span>
+      </GoBackBtn>
       <DashboardAlltimeWidget />
       <DashboardTable />
 

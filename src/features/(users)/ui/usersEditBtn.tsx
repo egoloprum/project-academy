@@ -5,13 +5,13 @@ import { Pencil } from 'lucide-react'
 
 import { useAnimatedRouter } from '@/shared/lib'
 
-export const UsersEditBtn = ({}) => {
+export const UsersEditBtn = ({ id }: { id: number }) => {
   const { push } = useAnimatedRouter()
 
   return (
     <motion.button
       className="py-4 sm:px-4 px-4 cursor-pointer"
-      onClick={() => push('/users/edit')}
+      onClick={() => push(`/users/${id}/edit`)}
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.9 }}>
       <Pencil />

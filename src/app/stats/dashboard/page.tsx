@@ -1,3 +1,6 @@
+import { cookies } from 'next/headers'
+import { redirect } from 'next/navigation'
+
 import { DashboardGoBackBtn } from '@/features/(stats)'
 import { isUserType } from '@/shared/lib'
 import {
@@ -5,12 +8,11 @@ import {
   DashboardAlltimeWidget,
   DashboardApplicationRatioChart,
   DashboardDistributionChart,
+  DashboardEmploymentTypeChart,
   DashboardPortraitWidget,
   DashboardTable,
   DashboardTaskPointChart
 } from '@/widgets/(stats)'
-import { cookies } from 'next/headers'
-import { redirect } from 'next/navigation'
 
 const page = async ({}) => {
   const cookieStore = await cookies()
@@ -42,6 +44,7 @@ const page = async ({}) => {
 
       <section className="grid xl:grid-cols-2 gap-8 gap-y-4">
         <DashboardAgeGroupChart />
+        <DashboardEmploymentTypeChart />
       </section>
     </main>
   )

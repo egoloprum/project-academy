@@ -17,7 +17,7 @@ import {
   ChartTooltipContent
 } from '@/shared/components'
 
-import { ChartDistributionData } from '../helpers/data'
+import { ChartEmploymentTypeData } from '../helpers/data'
 import {
   CustomLegendContent,
   RenderCustomizedLabel,
@@ -26,56 +26,36 @@ import {
 import { RenderLabelProps } from '../helpers/types'
 
 const chartConfig = {
-  frontend: {
-    label: 'Frontend',
+  Учусь: {
+    label: 'Учусь',
     color: 'var(--chart-1)'
   },
-  backend: {
-    label: 'Backend',
+  Работаю: {
+    label: 'Работаю',
     color: 'var(--chart-2)'
-  },
-  qa: {
-    label: 'QA',
-    color: 'var(--chart-3)'
-  },
-  ui: {
-    label: 'UX/UI',
-    color: 'var(--chart-4)'
-  },
-  pm: {
-    label: 'PM',
-    color: 'var(--chart-5)'
-  },
-  sa: {
-    label: 'SA',
-    color: 'var(--chart-6)'
-  },
-  ceo: {
-    label: 'CEO',
-    color: 'var(--chart-7)'
   }
 } satisfies ChartConfig
 
-export function DashboardDistributionChart() {
-  const totalPercent = 100
+export function DashboardEmploymentTypeChart() {
+  const totalPercent = 150
 
   const { width } = useWindowSize()
 
   const innerRadius = useMemo(() => {
-    return width < 640 ? 30 : 60
+    return width < 640 ? 40 : 60
   }, [width])
 
   return (
     <Card className="bg-transparent border-none text-white gap-2 sm:gap-4 py-0">
       <CardHeader className="p-0">
         <CardTitle className="text-xl sm:text-2xl text-white">
-          Распределение по направлениям
+          Тип занятости
         </CardTitle>
       </CardHeader>
-      <CardContent className="bg-stone-900  rounded-md p-2 sm:p-4 relative">
+      <CardContent className="bg-stone-900 rounded-md p-2 sm:p-4 relative">
         <ChartContainer
           config={chartConfig}
-          className="rounded-sm aspect-[16/12] mt-4 md:aspect-video">
+          className="rounded-sm aspect-[16/14] mt-4 md:aspect-video">
           <PieChart>
             <ChartTooltip
               cursor={false}
@@ -83,13 +63,14 @@ export function DashboardDistributionChart() {
             />
             <ChartLegend content={<CustomLegendContent />} />
             <Pie
-              data={ChartDistributionData}
+              data={ChartEmploymentTypeData}
               dataKey="value"
               nameKey="label"
-              innerRadius={innerRadius}
               strokeWidth={1}
+              startAngle={-45}
+              innerRadius={innerRadius}
               label={(props: RenderLabelProps) =>
-                RenderCustomizedLabel(props, ChartDistributionData)
+                RenderCustomizedLabel(props, ChartEmploymentTypeData)
               }
               labelLine={false}>
               <Label

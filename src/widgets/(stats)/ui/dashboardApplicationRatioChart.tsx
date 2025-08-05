@@ -1,5 +1,7 @@
 'use client'
 
+import { Bar, BarChart, CartesianGrid, XAxis, YAxis } from 'recharts'
+
 import {
   Card,
   CardContent,
@@ -12,7 +14,6 @@ import {
   ChartTooltip,
   ChartTooltipContent
 } from '@/shared/components'
-import { Bar, BarChart, CartesianGrid, XAxis, YAxis } from 'recharts'
 
 const chartData = [
   { direction: 'Frontend', accepted: 36, rejected: 60 },

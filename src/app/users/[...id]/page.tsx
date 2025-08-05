@@ -1,6 +1,7 @@
 import { cookies } from 'next/headers'
 import { redirect } from 'next/navigation'
 
+import { UsersEditForm } from '@/features/(users)'
 import { GoBackBtn } from '@/shared/components'
 import { isUserType } from '@/shared/lib'
 
@@ -23,7 +24,8 @@ const page = async ({}) => {
       <GoBackBtn url="/users">
         <span>Назад</span>
       </GoBackBtn>
-      <p className="text-2xl font-bold">Редактировать</p>
+      <p className="text-2xl font-bold mb-4 md:mb-8">Редактировать</p>
+      <UsersEditForm />
     </main>
   )
 }

@@ -15,3 +15,16 @@ export const UsersFormDirectionsData = [
   { direction: 'ceo', id: 'checkbox-ceo', label: 'CEO' },
   { direction: 'designer', id: 'checkbox-designer', label: 'UI/UX Designer' }
 ]
+
+export const UsersEditData = {
+  firstName: 'Иванов',
+  middleName: 'Иван',
+  lastName: 'Иванович',
+  birthday: '13.03.2003',
+  email: 'example@gmail.com',
+  city: 'Северск',
+  role: 'Стажер',
+  generation: 'Поток 4',
+  direction: 'Frontend',
+  comment: ''
+}

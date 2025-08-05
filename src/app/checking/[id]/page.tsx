@@ -1,11 +1,8 @@
 import { cookies } from 'next/headers'
 import { redirect } from 'next/navigation'
 
-import {
-  CheckingForm,
-  CheckingGoBackBtn,
-  CheckingProcessSelect
-} from '@/features/(checking)'
+import { CheckingForm, CheckingProcessSelect } from '@/features/(checking)'
+import { GoBackBtn } from '@/shared/components'
 import { isUserType } from '@/shared/lib'
 
 const page = async ({}) => {
@@ -24,7 +21,9 @@ const page = async ({}) => {
 
   return (
     <main className="bg-black min-h-screen text-white px-6 sm:px-12 md:px-24 py-10 flex flex-col gap-4">
-      <CheckingGoBackBtn />
+      <GoBackBtn url="/checking">
+        <span>Назад к списку</span>
+      </GoBackBtn>
       <p className="text-2xl font-bold">System Analyst / Поток 3</p>
       <section className="flex flex-wrap justify-between gap-8 mt-4 sm:mt-8">
         <div className="flex justify-between flex-wrap md:flex-nowrap gap-4 gap-x-16">

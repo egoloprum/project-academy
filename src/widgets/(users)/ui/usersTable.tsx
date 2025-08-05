@@ -28,7 +28,7 @@ export const UsersTable = ({}) => {
               <td className="px-4 md:py-6 text-nowrap">{data.generation}</td>
               <td className="px-4 md:py-6 text-end">
                 <div className="flex justify-end gap-2">
-                  <UsersEditBtn />
+                  <UsersEditBtn id={index + 1} />
                   <UsersDeleteBtn />
                 </div>
               </td>

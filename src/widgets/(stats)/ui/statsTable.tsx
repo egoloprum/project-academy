@@ -1,4 +1,4 @@
-import { tableData } from '../helpers/data'
+import { statsTableData } from '../helpers/data'
 
 export const StatsTable = ({}) => {
   return (
@@ -16,7 +16,7 @@ export const StatsTable = ({}) => {
           </tr>
         </thead>
         <tbody>
-          {tableData.map((data, index) => (
+          {statsTableData.map((data, index) => (
             <tr key={index} className="border-b border-stone-800">
               <td className="p-4 md:py-6">{index + 1}</td>
               <td className="p-4 md:py-6 text-nowrap">{data.name}</td>

@@ -1,5 +1,6 @@
 import { GenerationCreateNewBtn } from '@/features/(generations)'
 import { isUserType } from '@/shared/lib'
+import { GenerationsAllTable } from '@/widgets/(generations)'
 import { cookies } from 'next/headers'
 import { redirect } from 'next/navigation'
 
@@ -19,8 +20,9 @@ const page = async ({}) => {
 
   return (
     <main className="bg-black min-h-screen text-white px-6 sm:px-12 md:px-24 py-10 flex flex-col gap-4">
-      <p className="text-2xl font-bold mb-8">Список всех наборов</p>
+      <p className="text-2xl font-bold mb-4 sm:mb-8">Список всех наборов</p>
       <GenerationCreateNewBtn />
+      <GenerationsAllTable />
     </main>
   )
 }

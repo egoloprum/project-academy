@@ -1,14 +1,15 @@
 'use client'
 
+import { motion } from 'framer-motion'
+import { Plus } from 'lucide-react'
+
 import {
   Dialog,
   DialogClose,
   DialogContent,
-  DialogFooter,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-  Input,
   Label,
   Select,
   SelectContent,
@@ -17,8 +18,6 @@ import {
   SelectValue
 } from '@/shared/components'
 
-import { motion } from 'framer-motion'
-import { Plus } from 'lucide-react'
 import { SelectDirectionData, SelectMentorsData } from '../helpers/data'
 
 export const DirectionAddDialog = ({}) => {
@@ -33,7 +32,7 @@ export const DirectionAddDialog = ({}) => {
           <span className="mb-1">Добавить направление</span>
         </motion.button>
       </DialogTrigger>
-      <DialogContent className="bg-black border-stone-900 outline-stone-900 max-w-[90%] sm:max-w-[400px] w-full p-8 overflow-y-auto max-h-[90%] text-white">
+      <DialogContent className="bg-black border-stone-900 outline-stone-900 max-w-[90%] sm:max-w-[400px] w-full p-4 sm:p-8 overflow-y-auto max-h-[90%] text-white">
         <DialogHeader>
           <DialogTitle className="text-center text-xl mb-4">
             Добавить направление
@@ -88,12 +87,15 @@ export const DirectionAddDialog = ({}) => {
               </SelectContent>
             </Select>
           </div>
-          <motion.button
-            className="px-4 py-2 pl-2 bg-lime-300 hover:bg-lime-400 active:bg-lime-500 text-black font-medium rounded-md cursor-pointer mt-4"
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}>
-            Сохранить
-          </motion.button>
+          <DialogClose asChild>
+            <motion.button
+              type="button"
+              className="px-4 py-2 pl-2 bg-lime-300 hover:bg-lime-400 active:bg-lime-500 text-black font-medium rounded-md cursor-pointer mt-4"
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}>
+              Сохранить
+            </motion.button>
+          </DialogClose>
         </form>
       </DialogContent>
     </Dialog>

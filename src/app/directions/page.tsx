@@ -1,10 +1,12 @@
+import { cookies } from 'next/headers'
+import { redirect } from 'next/navigation'
+
 import {
   DirectionAddDialog,
+  DirectionCreateDialog,
   DirectionGenerationSelect
 } from '@/features/(directions)'
 import { isUserType } from '@/shared/lib'
-import { cookies } from 'next/headers'
-import { redirect } from 'next/navigation'
 
 const page = async ({}) => {
   const cookieStore = await cookies()
@@ -26,8 +28,9 @@ const page = async ({}) => {
         Информация о направлениях
       </p>
       <DirectionGenerationSelect />
-      <div>
+      <div className="mt-4 flex sm:flex-row flex-col gap-4 justify-end">
         <DirectionAddDialog />
+        <DirectionCreateDialog />
       </div>
     </main>
   )

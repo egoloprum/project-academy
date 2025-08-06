@@ -19,11 +19,11 @@ export const DirectionCreateDialog = ({}) => {
     <Dialog>
       <DialogTrigger asChild>
         <motion.button
-          className="px-4 py-2 pl-2 bg-stone-800 hover:bg-stone-900 active:bg-stone-950 font-medium rounded-md cursor-pointer flex gap-2 items-center text-sm"
+          className="px-4 py-2 pl-2 bg-stone-800 hover:bg-stone-900 active:bg-stone-950 font-medium rounded-md cursor-pointer flex gap-2 items-center text-sm justify-center"
           whileHover={{ scale: 1.02 }}
           whileTap={{ scale: 0.98 }}>
           <Plus className="w-4 h-4" />
-          <span className="mb-1">Создать направление</span>
+          <span className="">Создать направление</span>
         </motion.button>
       </DialogTrigger>
       <DialogContent className="bg-black border-stone-900 outline-stone-900 max-w-[90%] sm:max-w-[400px] w-full p-4 sm:p-8 overflow-y-auto max-h-[90%] text-white">

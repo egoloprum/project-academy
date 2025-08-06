@@ -4,9 +4,12 @@ import { redirect } from 'next/navigation'
 import {
   DirectionAddDialog,
   DirectionCreateDialog,
-  DirectionGenerationSelect
+  DirectionGenerationSelect,
+  DirectionProvider,
+  DirectionSaveBtn
 } from '@/features/(directions)'
 import { isUserType } from '@/shared/lib'
+import { DirectionTable } from '@/widgets/(directions)'
 
 const page = async ({}) => {
   const cookieStore = await cookies()
@@ -27,11 +30,15 @@ const page = async ({}) => {
       <p className="text-2xl font-bold mb-4 sm:mb-8">
         Информация о направлениях
       </p>
-      <DirectionGenerationSelect />
-      <div className="mt-4 flex sm:flex-row flex-col gap-4 justify-end">
-        <DirectionAddDialog />
-        <DirectionCreateDialog />
-      </div>
+      <DirectionProvider>
+        <DirectionGenerationSelect />
+        <div className="mt-4 flex sm:flex-row flex-col gap-4 justify-end">
+          <DirectionAddDialog />
+          <DirectionCreateDialog />
+        </div>
+        <DirectionTable />
+        <DirectionSaveBtn />
+      </DirectionProvider>
     </main>
   )
 }

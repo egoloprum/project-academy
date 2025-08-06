@@ -3,14 +3,17 @@
 import { PopoverClose } from '@radix-ui/react-popover'
 import { motion } from 'framer-motion'
 import { Funnel, X } from 'lucide-react'
+import { useState } from 'react'
 
 import { Popover, PopoverContent, PopoverTrigger } from '@/shared/components'
 
 import { UsersFilterForm } from './usersFilterForm'
 
 export const UsersFilterDropdown = ({}) => {
+  const [isPopoverOpen, setIsPopoverOpen] = useState(false)
+
   return (
-    <Popover>
+    <Popover open={isPopoverOpen} onOpenChange={setIsPopoverOpen}>
       <PopoverTrigger asChild>
         <motion.button
           className="p-2 rounded-md cursor-pointer bg-stone-800 active:bg-stone-900"
@@ -28,7 +31,7 @@ export const UsersFilterDropdown = ({}) => {
             <X className="w-4 h-4" />
           </PopoverClose>
         </div>
-        <UsersFilterForm />
+        <UsersFilterForm onClose={() => setIsPopoverOpen(false)} />
       </PopoverContent>
     </Popover>
   )

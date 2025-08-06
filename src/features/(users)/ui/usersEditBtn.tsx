@@ -14,7 +14,7 @@ export const UsersEditBtn = ({ id }: { id: number }) => {
       onClick={() => push(`/users/${id}/edit`)}
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.9 }}>
-      <Pencil />
+      <Pencil className="w-5 h-5 md:w-6 md:h-6" />
     </motion.button>
   )
 }

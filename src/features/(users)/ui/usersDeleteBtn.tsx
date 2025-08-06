@@ -9,7 +9,7 @@ export const UsersDeleteBtn = ({}) => {
       className="p-4 pr-0 sm:px-4 cursor-pointer text-red-500"
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.9 }}>
-      <Trash2 />
+      <Trash2 className="w-5 h-5 md:w-6 md:h-6" />
     </motion.button>
   )
 }

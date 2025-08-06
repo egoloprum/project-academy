@@ -1,7 +1,11 @@
 import { cookies } from 'next/headers'
 import { redirect } from 'next/navigation'
 
-import { UsersFilterDropdown, UsersSearchInput } from '@/features/(users)'
+import {
+  UsersFilterDropdown,
+  UsersSearchInput,
+  UsersSearchProvider
+} from '@/features/(users)'
 import { isUserType } from '@/shared/lib'
 import { UsersTable } from '@/widgets/(users)'
 
@@ -22,13 +26,15 @@ const page = async ({}) => {
   return (
     <main className="bg-black min-h-screen text-white px-6 sm:px-12 md:px-24 py-10 flex flex-col gap-8 sm:gap-12 md:gap-8 lg:gap-16">
       <p className="text-2xl font-bold">Пользователи</p>
-      <section className="flex flex-col gap-4">
-        <div className="flex items-center justify-end gap-4">
-          <UsersSearchInput />
-          <UsersFilterDropdown />
-        </div>
-        <UsersTable />
-      </section>
+      <UsersSearchProvider>
+        <section className="flex flex-col gap-4">
+          <div className="flex items-center justify-end gap-4">
+            <UsersSearchInput />
+            <UsersFilterDropdown />
+          </div>
+          <UsersTable />
+        </section>
+      </UsersSearchProvider>
     </main>
   )
 }

@@ -1,4 +1,7 @@
+'use client'
+
 import Image from 'next/image'
+import { usePathname } from 'next/navigation'
 import { FC } from 'react'
 
 import { NavbarLinkBtn, UserDropdown } from '@/features/(navbar)'
@@ -35,6 +38,7 @@ const pathConfig = {
 } satisfies Record<'intern' | 'mentor' | 'admin', PathItem[]>
 
 export const Navbar: FC<NavbarProps> = ({ userType }) => {
+  const pathname = usePathname()
   const paths = pathConfig[userType] ?? []
 
   return (
@@ -44,7 +48,14 @@ export const Navbar: FC<NavbarProps> = ({ userType }) => {
       <ul className="hidden lg:flex flex-wrap justify-center font-medium">
         {paths.map((path: PathItem) => (
           <li key={path.url}>
-            <NavbarLinkBtn url={path.url} content={path.content} />
+            <NavbarLinkBtn
+              url={path.url}
+              content={path.content}
+              isActive={pathname
+                .split('/')
+                .filter(item => item.length !== 0)
+                .includes(path.url.slice(1, path.url.length))}
+            />
           </li>
         ))}
       </ul>

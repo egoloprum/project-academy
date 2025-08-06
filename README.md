@@ -1,36 +1,69 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Project Academy Internship Management System
 
-## Getting Started
+Overview
+Project Academy is a comprehensive internship management platform designed to streamline the process of onboarding, tracking, and managing interns across various technical directions. The system provides tools for:
 
-First, run the development server:
+Managing internship generations (batches)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Assigning mentors to technical directions
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Tracking intern progress and assignments
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Distributing and evaluating test tasks
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Visualizing intern distribution across technical tracks
 
-## Learn More
+Key Features
+🚀 Generation Management
+Create and manage internship batches
 
-To learn more about Next.js, take a look at the following resources:
+Assign mentors to technical directions
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Set capacity limits per direction
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Add custom comments for each direction
 
-## Deploy on Vercel
+📊 Data Visualization
+Interactive pie charts showing intern distribution
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Filterable tables for viewing generation details
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Responsive design for all device sizes
+
+👥 User Management
+Role-based access control (Admin, Mentor, Intern)
+
+User profile management
+
+Secure authentication system
+
+📝 Task Management
+Assign test tasks to specific generations
+
+Track task submissions
+
+Filter tasks by direction and generation
+
+🎨 Modern UI/UX
+Clean, dark-themed interface
+
+Smooth animations using Framer Motion
+
+Responsive design for all devices
+
+Accessible components with proper focus management
+
+Technologies Used
+React (v18) with Next.js (v13) App Router
+
+TypeScript for type safety
+
+Tailwind CSS for styling
+
+Framer Motion for animations
+
+Recharts for data visualization
+
+Radix UI for accessible components
+
+Zustand for state management

@@ -10,6 +10,7 @@ import {
   SelectTrigger,
   SelectValue
 } from '@/shared/components'
+import { useAnimatedRouter } from '@/shared/lib'
 
 import { UsersEditData } from '../helpers/data'
 
@@ -83,6 +84,8 @@ const usersDirectionData = [
 ]
 
 export const UsersEditForm = ({}) => {
+  const { push } = useAnimatedRouter()
+
   return (
     <form>
       <div className="grid sm:grid-cols-2 xl:grid-cols-5 gap-8">
@@ -248,7 +251,9 @@ export const UsersEditForm = ({}) => {
         </div>
       </div>
       <motion.button
+        type="button"
         className="rounded-md px-4 py-2 mt-8 text-black font-medium cursor-pointer bg-lime-300 hover:bg-lime-400 active:bg-lime-500 w-full sm:w-fit"
+        onClick={() => push('/users')}
         whileHover={{ scale: 1.02 }}
         whileTap={{ scale: 0.98 }}>
         <span>Сохранить изменения</span>

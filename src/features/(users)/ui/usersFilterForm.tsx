@@ -12,7 +12,7 @@ import {
   UsersFormRolesData
 } from '../helpers/data'
 
-export const UsersFilterForm = ({}) => {
+export const UsersFilterForm = ({ onClose }: { onClose: () => void }) => {
   const router = useRouter()
   const pathname = usePathname()
   const searchParams = useSearchParams()
@@ -69,6 +69,8 @@ export const UsersFilterForm = ({}) => {
     else params.delete('direction')
 
     router.replace(`${pathname}?${params.toString()}`)
+
+    onClose()
   }
 
   const handleClearFilters = () => {
@@ -78,10 +80,14 @@ export const UsersFilterForm = ({}) => {
 
     const params = new URLSearchParams()
     router.replace(`${pathname}?${params.toString()}`)
+
+    onClose()
   }
 
   return (
-    <form action="" className="border-y border-stone-800">
+    <form
+      action=""
+      className="border-t h-72 md:h-full overflow-y-auto scrollbar-hidden border-stone-800">
       <ul className="px-4 py-2 sm:py-4 flex flex-col gap-2">
         <p className="text-gray-400">Роль</p>
 
@@ -151,7 +157,9 @@ export const UsersFilterForm = ({}) => {
           whileTap={{ scale: 0.95 }}>
           <span>Очистить</span>
         </motion.button>
+
         <motion.button
+          type="button"
           className="p-2 px-4 rounded-md cursor-pointer text-black text-sm bg-lime-300 hover:bg-lime-400 active:bg-lime-500 font-medium"
           onClick={handleApplyFilters}
           whileHover={{ scale: 1.05 }}

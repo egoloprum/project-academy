@@ -3,7 +3,6 @@
 import {
   Select,
   SelectContent,
-  SelectGroup,
   SelectItem,
   SelectTrigger,
   SelectValue
@@ -38,16 +37,14 @@ export const CheckingProcessSelect = () => {
         </div>
       </SelectTrigger>
       <SelectContent className="bg-stone-800 border-none">
-        <SelectGroup>
-          {statuses.map((status, index) => (
-            <SelectItem
-              key={status}
-              value={index.toString()}
-              className="focus:bg-stone-900 active:bg-stone-950 text-white focus:text-white text-md">
-              <span className={statusColors[status]}>{status}</span>
-            </SelectItem>
-          ))}
-        </SelectGroup>
+        {statuses.map((status, index) => (
+          <SelectItem
+            key={status}
+            value={index.toString()}
+            className="focus:bg-stone-900 active:bg-stone-950 text-white focus:text-white text-md">
+            <span className={statusColors[status]}>{status}</span>
+          </SelectItem>
+        ))}
       </SelectContent>
     </Select>
   )

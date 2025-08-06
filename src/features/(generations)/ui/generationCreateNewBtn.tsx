@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { Plus } from 'lucide-react'
+
 import { useAnimatedRouter } from '@/shared/lib'
 
 export const GenerationCreateNewBtn = ({}) => {

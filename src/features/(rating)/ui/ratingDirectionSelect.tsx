@@ -32,7 +32,7 @@ const selectData = [
   },
   {
     value: 'qa-engineer',
-    content: 'Qa Engineer'
+    content: 'QA Engineer'
   },
   {
     value: 'ui/ux-designer',
@@ -42,9 +42,9 @@ const selectData = [
 
 export const RatingDirectionSelect = ({}) => {
   return (
-    <Select>
+    <Select defaultValue="backend">
       <SelectTrigger className="lg:max-w-48 w-full bg-stone-800 border-none">
-        <SelectValue placeholder="Выбрать направление" defaultValue="backend" />
+        <SelectValue placeholder="Выбрать направление" />
       </SelectTrigger>
       <SelectContent className="bg-stone-800 border-none">
         <SelectGroup>

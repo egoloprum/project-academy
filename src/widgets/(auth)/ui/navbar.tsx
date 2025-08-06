@@ -14,8 +14,9 @@ type PathItem = {
 
 const pathConfig = {
   admin: [
+    { url: '/directions', content: 'Направления' },
     { url: '/users', content: 'Пользователи' },
-    { url: '/directions', content: 'Наборы' },
+    { url: '/generations', content: 'Наборы' },
     { url: '/stats', content: 'Статистика' },
     { url: '/rating', content: 'Рейтинг' },
     { url: '/profile', content: 'Профиль' }

@@ -1,14 +1,15 @@
 'use client'
 
+import { AnimatePresence, motion } from 'framer-motion'
+
 import {
   DirectionDeleteBtn,
   DirectionEditBtn,
   DirectionTableTaskSelect,
   useDirection
 } from '@/features/(directions)'
-import { DirectionTableData } from '../helpers/data'
 
-import { AnimatePresence, motion } from 'framer-motion'
+import { DirectionTableData } from '../helpers/data'
 
 export const DirectionTable = ({}) => {
   const { selectedGeneration } = useDirection()

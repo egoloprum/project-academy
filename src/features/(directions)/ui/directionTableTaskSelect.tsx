@@ -17,7 +17,7 @@ export const DirectionTableTaskSelect = ({ tasks }: { tasks: string[] }) => {
         </div>
       </SelectTrigger>
       <SelectContent className="bg-stone-800 border-none">
-        {tasks.map((task, index) => (
+        {tasks.map(task => (
           <SelectItem
             key={task}
             value={task}

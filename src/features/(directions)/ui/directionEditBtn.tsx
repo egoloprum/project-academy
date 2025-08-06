@@ -3,11 +3,7 @@
 import { motion } from 'framer-motion'
 import { Pencil } from 'lucide-react'
 
-import { useAnimatedRouter } from '@/shared/lib'
-
 export const DirectionEditBtn = () => {
-  const { push } = useAnimatedRouter()
-
   return (
     <motion.button
       className="py-4 sm:px-4 px-4 cursor-pointer"

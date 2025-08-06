@@ -7,6 +7,7 @@ import {
   SelectTrigger,
   SelectValue
 } from '@/shared/components'
+
 import { useDirection } from '../helpers/directionContext'
 
 const generations = ['Поток 4', 'Поток 3', 'Поток 2', 'Поток 1']

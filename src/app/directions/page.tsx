@@ -1,4 +1,7 @@
-import { DirectionGenerationSelect } from '@/features/(directions)'
+import {
+  DirectionAddDialog,
+  DirectionGenerationSelect
+} from '@/features/(directions)'
 import { isUserType } from '@/shared/lib'
 import { cookies } from 'next/headers'
 import { redirect } from 'next/navigation'
@@ -23,6 +26,9 @@ const page = async ({}) => {
         Информация о направлениях
       </p>
       <DirectionGenerationSelect />
+      <div>
+        <DirectionAddDialog />
+      </div>
     </main>
   )
 }

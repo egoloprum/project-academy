@@ -8,21 +8,25 @@ import {
   SelectValue
 } from '@/shared/components'
 
+import { useDirection } from '../helpers/directionContext'
+
 const generations = ['Поток 4', 'Поток 3', 'Поток 2', 'Поток 1']
 
 export const DirectionGenerationSelect = ({}) => {
+  const { setSelectedGeneration } = useDirection()
+
   return (
-    <Select>
+    <Select onValueChange={setSelectedGeneration}>
       <SelectTrigger className="sm:max-w-64 w-full bg-stone-800 border-none text-md">
         <div className="flex items-center gap-2">
           <SelectValue placeholder="Выбирай поток" />
         </div>
       </SelectTrigger>
       <SelectContent className="bg-stone-800 border-none">
-        {generations.map((gen, index) => (
+        {generations.map(gen => (
           <SelectItem
             key={gen}
-            value={index.toString()}
+            value={gen}
             className="focus:bg-stone-900 active:bg-stone-950 text-white focus:text-white text-md">
             <span>{gen}</span>
           </SelectItem>

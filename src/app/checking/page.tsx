@@ -25,10 +25,12 @@ const page = async ({}) => {
 
   return (
     <main className="bg-black min-h-screen text-white px-6 sm:px-12 md:px-24 py-10 flex flex-col gap-4">
-      <p className="text-2xl font-bold">System Analyst / Поток 3</p>
+      <p className="text-2xl font-bold mb-4 md:mb-8">
+        System Analyst / Поток 3
+      </p>
       <CheckingProvider>
         <CheckingToggler />
-        <div className="flex flex-col sm:flex-row justify-between sm:items-center gap-4 mt-4 sm:mt-8">
+        <div className="flex flex-col sm:flex-row justify-between sm:items-center gap-4 mt-4 md:mt-8">
           <p className="text-nowrap">
             <span>Количество тестовых заданий</span>
             <span className="font-medium ml-2">96</span>

@@ -1,11 +1,10 @@
+import { CheckingTableType } from '@/entities/checking'
 import { CheckingEachBtn } from '@/features/(checking)'
-
-import { CheckingDataType } from '../helpers/types'
 
 export const CheckingTable = ({
   tableData
 }: {
-  tableData: CheckingDataType[]
+  tableData: CheckingTableType[]
 }) => {
   const dataStatusColor = {
     'Принят на стажировку': 'text-lime-400',
@@ -32,7 +31,9 @@ export const CheckingTable = ({
               <td className="p-4 md:py-6 text-nowrap">
                 <CheckingEachBtn name={data.name} index={index + 1} />
               </td>
-              <td className="p-4 md:py-6">{data.result}</td>
+              <td className="p-4 md:py-6">
+                {data.result && `${data.result} %`}
+              </td>
               <td className="p-4 md:py-6 text-nowrap">{data.date}</td>
               <td className="p-4 md:py-6 max-w-40 min-w-[180px]">
                 {data.feedback}

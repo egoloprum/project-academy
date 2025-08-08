@@ -107,7 +107,7 @@ export const CheckingForm = ({}) => {
         </section>
       </div>
       <motion.button
-        className="px-4 py-2 bg-lime-300 hover:bg-lime-400 active:bg-lime-500 cursor-pointer text-black font-medium rounded-md mt-8 sm:mt-12"
+        className="px-10 py-2 bg-lime-300 hover:bg-lime-400 active:bg-lime-500 cursor-pointer text-black font-medium rounded-md mt-8 sm:mt-12 w-full sm:w-fit"
         whileHover={{ scale: 1.02 }}
         whileTap={{ scale: 0.98 }}>
         Сохранить изменения

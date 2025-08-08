@@ -1,11 +1,12 @@
-import { TaskEditDialog, TaskSaveDialog, TaskTextarea } from '@/features/(task)'
+import { TaskEditDialog, TaskSaveDialog } from '@/features/(task)'
+import { Textarea } from '@/shared/components'
 
 import { taskTimeData } from '../helpers/data'
 
 export const TaskMentorWidget = ({}) => {
   return (
     <div className="flex flex-col-reverse lg:flex-row gap-8">
-      <TaskTextarea />
+      <Textarea />
       <div className="flex flex-col sm:flex-row lg:flex-col gap-4">
         <ul className="flex justify-between sm:justify-start w-full gap-4 font-medium">
           {taskTimeData.map((item, index) => (

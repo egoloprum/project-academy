@@ -3,11 +3,10 @@
 import { AnimatePresence, motion } from 'framer-motion'
 import { FC } from 'react'
 
-import { TaskDeleteBtn } from '@/features/(task)'
-import { useTaskContext } from '@/features/(task)/helpers/taskContext'
+import { useTasksContext, TasksDeleteBtn } from '@/features/(tasks)'
 
 export const TasksTable: FC = () => {
-  const { currentTasks, selectedGeneration } = useTaskContext()
+  const { currentTasks, selectedGeneration } = useTasksContext()
 
   return (
     <AnimatePresence mode="wait">
@@ -27,7 +26,7 @@ export const TasksTable: FC = () => {
               key={index}
               className="sm:px-4 md:px-6 lg:px-8 border-b border-stone-800 flex items-center justify-between">
               <span className="py-4 sm:px-4 px-0">{task}</span>
-              <TaskDeleteBtn />
+              <TasksDeleteBtn />
             </li>
           ))}
         </motion.ul>

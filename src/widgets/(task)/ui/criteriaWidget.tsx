@@ -1,7 +1,7 @@
 'use client'
 
 import {
-  AddCriteriaBtn,
+  CriteriaAddBtn,
   CriteriaDeleteBtn,
   CriteriaEditBtn
 } from '@/features/(task)'
@@ -43,7 +43,7 @@ export const CriteriaWidget = ({}) => {
           </tbody>
         </table>
       </div>
-      <AddCriteriaBtn className="mt-8 sm:mt-12 md:mt-8 lg:mt-16" />
+      <CriteriaAddBtn className="mt-8 sm:mt-12 md:mt-8 lg:mt-16" />
     </>
   )
 }

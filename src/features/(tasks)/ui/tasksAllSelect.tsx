@@ -9,11 +9,11 @@ import {
   SelectValue
 } from '@/shared/components'
 
-import { generations } from '../helpers/data'
-import { useTaskContext } from '../helpers/taskContext'
+import { useTasksContext } from '../helpers/tasksContext'
 
-export const AllTaskSelect = ({}) => {
-  const { selectedGeneration, setSelectedGeneration } = useTaskContext()
+export const TasksAllSelect = ({}) => {
+  const { getGenerations, selectedGeneration, setSelectedGeneration } =
+    useTasksContext()
 
   return (
     <Select value={selectedGeneration} onValueChange={setSelectedGeneration}>
@@ -22,7 +22,7 @@ export const AllTaskSelect = ({}) => {
       </SelectTrigger>
       <SelectContent className="bg-stone-800 border-none">
         <SelectGroup>
-          {generations.map(generation => (
+          {getGenerations.map(generation => (
             <SelectItem
               value={generation.id}
               key={generation.id}

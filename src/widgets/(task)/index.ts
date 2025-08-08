@@ -1,6 +1,5 @@
-export * from './ui/tasksTable'
 export * from './ui/taskMentorWidget'
 export * from './ui/taskInternWidget'
 export * from './ui/criteriaWidget'
 export * from './ui/taskContent'
-export * from './ui/taskHistoryWidget'
+export * from './ui/taskHistoryTable'

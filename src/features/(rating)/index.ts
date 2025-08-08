@@ -8,3 +8,5 @@ export * from './ui/ratingSelectTable'
 export * from './ui/ratingFinalToSelectBtn'
 export * from './ui/ratingSelectToFinalBtn'
 export * from './helpers/ratingFinalContext'
+
+export * from './helpers/ratingMentorContext'

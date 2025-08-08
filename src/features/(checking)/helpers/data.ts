@@ -1,4 +1,4 @@
-import { CheckingTableType } from './types'
+import { CheckingTableType } from '@/entities/checking'
 
 export const checkingTablePendingData: CheckingTableType[] = [
   {

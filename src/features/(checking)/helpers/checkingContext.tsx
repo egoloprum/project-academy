@@ -18,8 +18,10 @@ type CheckingSortingType =
 interface CheckingContextType {
   checkingToggler: CheckingTogglerType
   setCheckingToggler: (form: CheckingTogglerType) => void
+
   checkingSorting: CheckingSortingType
   setCheckingSorting: (form: CheckingSortingType) => void
+
   checkingCurrentTable: CheckingTableType[]
 }
 

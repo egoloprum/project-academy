@@ -1,5 +1,6 @@
 'use client'
 
+import { DirectionData } from '@/entities/direction'
 import {
   Select,
   SelectContent,
@@ -9,46 +10,26 @@ import {
   SelectValue
 } from '@/shared/components'
 
-const selectData = [
-  {
-    value: 'backend',
-    content: 'Backend'
-  },
-  {
-    value: 'frontend',
-    content: 'Frontend'
-  },
-  {
-    value: 'system-analyst',
-    content: 'System Analyst'
-  },
-  {
-    value: 'project-manager',
-    content: 'Project Manager'
-  },
-  {
-    value: 'ceo',
-    content: 'CEO'
-  },
-  {
-    value: 'qa-engineer',
-    content: 'QA Engineer'
-  },
-  {
-    value: 'ui/ux-designer',
-    content: 'UI/UX Designer'
-  }
-]
+import { useRatingMentor } from '../helpers/ratingMentorContext'
 
 export const RatingDirectionSelect = ({}) => {
+  const { ratingDirectionSelect, setRatingDirectionSelect } = useRatingMentor()
+
   return (
-    <Select defaultValue="backend">
+    <Select
+      defaultValue={ratingDirectionSelect}
+      onValueChange={setRatingDirectionSelect}>
       <SelectTrigger className="lg:max-w-48 w-full bg-stone-800 border-none">
-        <SelectValue placeholder="Выбрать направление" />
+        <SelectValue placeholder="Выбрать направление" defaultValue="Backend" />
       </SelectTrigger>
       <SelectContent className="bg-stone-800 border-none">
         <SelectGroup>
-          {selectData.map((data, index) => (
+          <SelectItem
+            value="empty"
+            className="focus:bg-stone-900 active:bg-stone-950 text-white focus:text-white">
+            <span>Удалить фильтр</span>
+          </SelectItem>
+          {DirectionData.map((data, index) => (
             <SelectItem
               key={index}
               value={data.value}

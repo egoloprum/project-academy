@@ -14,7 +14,7 @@ export const CheckingEachBtn = ({
   return (
     <button
       onClick={() => push(`/checking/${index}`)}
-      className="cursor-pointer hover:underline underline-offset-2">
+      className="cursor-pointer underline underline-offset-2 hover:text-lime-400 active:text-lime-500">
       {name}
     </button>
   )

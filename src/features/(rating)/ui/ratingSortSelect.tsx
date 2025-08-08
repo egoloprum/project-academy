@@ -11,6 +11,8 @@ import {
   SelectValue
 } from '@/shared/components'
 
+import { useRatingMentor } from '../helpers/ratingMentorContext'
+
 const selectData = [
   {
     value: 'highest-score',
@@ -31,8 +33,10 @@ const selectData = [
 ]
 
 export const RatingSortSelect = ({}) => {
+  const { ratingSorting, setRatingSorting } = useRatingMentor()
+
   return (
-    <Select>
+    <Select defaultValue={ratingSorting} onValueChange={setRatingSorting}>
       <SelectTrigger className="lg:max-w-48 w-full bg-stone-800 border-none">
         <SelectValue placeholder="Сортировка" defaultValue="highest-score" />
       </SelectTrigger>

@@ -25,7 +25,9 @@ export const TasksTable: FC = () => {
             <li
               key={index}
               className="sm:px-4 md:px-6 lg:px-8 border-b border-stone-800 flex items-center justify-between">
-              <span className="py-4 sm:px-4 px-0">{task}</span>
+              <span className="py-4 sm:px-4 px-0 text-sm sm:text-base">
+                {task}
+              </span>
               <TasksDeleteBtn />
             </li>
           ))}

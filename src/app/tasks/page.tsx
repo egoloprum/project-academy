@@ -15,16 +15,20 @@ const page = async ({}) => {
     redirect('/login')
   }
 
+  if (userType === 'admin' || userType === 'intern') {
+    redirect('/profile')
+  }
+
   return (
     <TasksProvider>
-      <div className="bg-black min-h-screen text-white px-6 sm:px-12 md:px-24 py-10 flex flex-col gap-8">
-        <div className="flex flex-col sm:flex-row gap-4 justify-between w-full h-fit">
+      <main className="bg-black min-h-screen text-white px-6 sm:px-12 md:px-24 py-10 flex flex-col gap-4 sm:gap-8">
+        <div className="flex flex-col sm:flex-row gap-4 gap-y-8 justify-between w-full h-fit">
           <p className="text-2xl font-bold text-nowrap">Все задания</p>
           <TasksAllSelect />
         </div>
 
         <TasksTable />
-      </div>
+      </main>
     </TasksProvider>
   )
 }

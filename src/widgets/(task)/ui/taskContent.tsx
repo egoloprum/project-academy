@@ -4,7 +4,7 @@ import { AnimatePresence, motion } from 'framer-motion'
 
 import { useTask } from '@/features/(task)'
 
-import { CriteriaWidget } from './criteriaWidget'
+import { CriteriaTable } from './criteriaTable'
 import { TaskHistoryTable } from './taskHistoryTable'
 import { TaskInternWidget } from './taskInternWidget'
 import { TaskMentorWidget } from './taskMentorWidget'
@@ -28,7 +28,7 @@ export const TaskContent = ({
           taskTogglerFlag === 'taskLeft' ? (
             <TaskMentorWidget />
           ) : (
-            <CriteriaWidget />
+            <CriteriaTable />
           )
         ) : taskTogglerFlag === 'taskLeft' ? (
           <TaskInternWidget />

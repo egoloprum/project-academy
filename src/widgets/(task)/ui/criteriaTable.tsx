@@ -8,7 +8,7 @@ import {
 
 import { taskCriteriaData } from '../helpers/data'
 
-export const CriteriaWidget = ({}) => {
+export const CriteriaTable = ({}) => {
   return (
     <>
       <div className="w-full overflow-x-auto">
@@ -43,7 +43,7 @@ export const CriteriaWidget = ({}) => {
           </tbody>
         </table>
       </div>
-      <CriteriaAddBtn className="mt-8 sm:mt-12 md:mt-8 lg:mt-16" />
+      <CriteriaAddBtn className="mt-8 sm:mt-12" />
     </>
   )
 }

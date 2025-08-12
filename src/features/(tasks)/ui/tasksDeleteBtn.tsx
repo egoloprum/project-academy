@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion'
 import { Trash2 } from 'lucide-react'
 
-export const TaskDeleteBtn = ({}) => {
+export const TasksDeleteBtn = ({}) => {
   return (
     <motion.button
       className="py-4 sm:px-4 pr-0 cursor-pointer text-red-500"

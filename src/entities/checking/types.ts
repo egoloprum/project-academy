@@ -4,7 +4,7 @@ type checkingStatus =
   | 'На рассмотрении'
   | 'Заявка отклонена'
 
-export interface CheckingDataType {
+export interface CheckingTableType {
   name: string
   result: string
   date: string

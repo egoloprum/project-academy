@@ -2,10 +2,10 @@
 
 import { AnimatePresence, motion } from 'framer-motion'
 
-import { useTaskCompletion } from '@/features/(task)'
+import { useTask } from '@/features/(task)'
 
-import { CriteriaWidget } from './criteriaWidget'
-import { TaskHistoryWidget } from './taskHistoryWidget'
+import { CriteriaTable } from './criteriaTable'
+import { TaskHistoryTable } from './taskHistoryTable'
 import { TaskInternWidget } from './taskInternWidget'
 import { TaskMentorWidget } from './taskMentorWidget'
 
@@ -14,26 +14,26 @@ export const TaskContent = ({
 }: {
   userType: 'mentor' | 'intern'
 }) => {
-  const { activeForm } = useTaskCompletion()
+  const { taskTogglerFlag } = useTask()
 
   return (
     <AnimatePresence mode="wait">
       <motion.div
-        key={activeForm}
+        key={taskTogglerFlag}
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: -10 }}
         transition={{ duration: 0.2 }}>
         {userType === 'mentor' ? (
-          activeForm === 'taskLeft' ? (
+          taskTogglerFlag === 'taskLeft' ? (
             <TaskMentorWidget />
           ) : (
-            <CriteriaWidget />
+            <CriteriaTable />
           )
-        ) : activeForm === 'taskLeft' ? (
+        ) : taskTogglerFlag === 'taskLeft' ? (
           <TaskInternWidget />
         ) : (
-          <TaskHistoryWidget />
+          <TaskHistoryTable />
         )}
       </motion.div>
     </AnimatePresence>

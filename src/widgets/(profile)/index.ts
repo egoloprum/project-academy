@@ -1,1 +1,1 @@
-export * from './ui/profileContent'
+export * from './ui/profileFormsWidget'

@@ -2,38 +2,42 @@
 
 import { createContext, useContext, useState, ReactNode } from 'react'
 
-import { tasksOfGenerations } from './data'
+type TaskTogglerType = 'taskLeft' | 'taskRight'
+type TaskAddAnswerType = 'formOpen' | 'formClose'
 
 interface TaskContextType {
-  selectedGeneration: string
-  setSelectedGeneration: (id: string) => void
-  currentTasks: string[]
+  taskTogglerFlag: TaskTogglerType
+  setTaskTogglerFlag: (form: TaskTogglerType) => void
+
+  addAnswerFlag: TaskAddAnswerType
+  setAddAnswerFlag: (form: TaskAddAnswerType) => void
 }
 
 const TaskContext = createContext<TaskContextType | undefined>(undefined)
 
 export const TaskProvider = ({ children }: { children: ReactNode }) => {
-  const [selectedGeneration, setSelectedGeneration] = useState('4')
-
-  const currentTasks =
-    tasksOfGenerations.find(gen => gen.id === selectedGeneration)?.tasks || []
+  const [taskTogglerFlag, setTaskTogglerFlag] =
+    useState<TaskTogglerType>('taskLeft')
+  const [addAnswerFlag, setAddAnswerFlag] =
+    useState<TaskAddAnswerType>('formClose')
 
   return (
     <TaskContext.Provider
       value={{
-        selectedGeneration,
-        setSelectedGeneration,
-        currentTasks
+        taskTogglerFlag,
+        setTaskTogglerFlag,
+        addAnswerFlag,
+        setAddAnswerFlag
       }}>
       {children}
     </TaskContext.Provider>
   )
 }
 
-export const useTaskContext = () => {
+export const useTask = () => {
   const context = useContext(TaskContext)
   if (!context) {
-    throw new Error('useTaskContext must be used within a TaskProvider')
+    throw new Error('useTask must be used within a TaskProvider')
   }
   return context
 }

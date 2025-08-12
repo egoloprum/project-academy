@@ -1,6 +1,6 @@
-import { CheckingDataType } from './types'
+import { CheckingTableType } from '@/entities/checking'
 
-export const checkingTablePendingData: CheckingDataType[] = [
+export const checkingTablePendingData: CheckingTableType[] = [
   {
     name: 'Иванов И.И.',
     result: '',
@@ -9,21 +9,21 @@ export const checkingTablePendingData: CheckingDataType[] = [
     status: 'Не проверено'
   },
   {
-    name: 'Иванов И.И.',
+    name: 'Петров П.С.',
     result: '',
     date: '6.01.2025',
     feedback: '',
     status: 'Не проверено'
   },
   {
-    name: 'Иванов И.И.',
+    name: 'Гун Л.И.',
     result: '',
     date: '01.01.2025',
     feedback: '',
     status: 'Не проверено'
   },
   {
-    name: 'Иванов И.И.',
+    name: 'Левкович Ф.И.',
     result: '',
     date: '01.01.2025',
     feedback: '',
@@ -31,30 +31,30 @@ export const checkingTablePendingData: CheckingDataType[] = [
   }
 ]
 
-export const checkingTableDoneData: CheckingDataType[] = [
+export const checkingTableDoneData: CheckingTableType[] = [
   {
     name: 'Иванов И.И.',
-    result: '83 %',
+    result: '83',
     date: '01.01.2025',
     feedback: 'Хорошая работа, нравится структура',
     status: 'Принят на стажировку'
   },
   {
-    name: 'Иванов И.И.',
-    result: '75 %',
+    name: 'Петров П.С.',
+    result: '75',
     date: '6.01.2025',
     feedback: 'Работа выполнена хорошо, но были грубые недочеты',
     status: 'На рассмотрении'
   },
   {
-    name: 'Иванов И.И.',
-    result: '13 %',
+    name: 'Гун Л.И.',
+    result: '13',
     date: '08.01.2025',
     feedback: 'Ужасная работа',
     status: 'Заявка отклонена'
   },
   {
-    name: 'Иванов И.И.',
+    name: 'Левкович Ф.И.',
     result: '',
     date: '01.01.2025',
     feedback: '',

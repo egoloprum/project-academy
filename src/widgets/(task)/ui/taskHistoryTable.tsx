@@ -1,8 +1,10 @@
-import { TaskTextarea } from '@/features/(task)'
+'use client'
+
+import { Textarea } from '@/shared/components'
 
 import { taskHistoryData } from '../helpers/data'
 
-export const TaskHistoryWidget = ({}) => {
+export const TaskHistoryTable = ({}) => {
   return (
     <div className="w-full overflow-x-auto">
       <table className="w-full min-w-[450px]">
@@ -33,9 +35,10 @@ export const TaskHistoryWidget = ({}) => {
               </td>
               <td className="px-4 md:py-6">{history.result}</td>
               <td className="px-4 py-6 pr-0 max-w-48">
-                <TaskTextarea
+                <Textarea
                   defaultValue={history.comment}
-                  classNames="min-h-24 max-h-48 w-full bg-stone-800 hover:bg-stone-900 active:bg-stone-950"
+                  className="min-h-20 max-h-24 w-full bg-stone-800 hover:bg-stone-900 active:bg-stone-950 border-none"
+                  disabled
                 />
               </td>
             </tr>

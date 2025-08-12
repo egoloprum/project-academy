@@ -11,6 +11,8 @@ import {
   SelectValue
 } from '@/shared/components'
 
+import { useChecking } from '../helpers/checkingContext'
+
 const selectData = [
   {
     value: 'newest',
@@ -39,10 +41,12 @@ const selectData = [
 ]
 
 export const CheckingSelect = ({}) => {
+  const { checkingSorting, setCheckingSorting } = useChecking()
+
   return (
-    <Select>
+    <Select defaultValue={checkingSorting} onValueChange={setCheckingSorting}>
       <SelectTrigger className="sm:max-w-72 w-full bg-stone-800 border-none">
-        <SelectValue placeholder="Сортировка" defaultValue="newest" />
+        <SelectValue placeholder="Сортировка" />
       </SelectTrigger>
       <SelectContent className="bg-stone-800 border-none">
         <SelectGroup>

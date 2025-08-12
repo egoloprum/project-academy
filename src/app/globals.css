@@ -143,6 +143,15 @@ body::-webkit-scrollbar {
   display: none;
 }
 
+.scrollbar {
+  scrollbar-color: #bef264 transparent;
+  scrollbar-width: thin;
+}
+.scrollbar::-webkit-scrollbar {
+  scrollbar-color: #bef264 transparent;
+  scrollbar-width: thin;
+}
+
 .scrollbar-hidden::-webkit-scrollbar {
   display: none;
 }

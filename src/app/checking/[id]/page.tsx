@@ -24,8 +24,10 @@ const page = async ({}) => {
       <GoBackBtn url="/checking">
         <span>Назад к списку</span>
       </GoBackBtn>
-      <p className="text-2xl font-bold">System Analyst / Поток 3</p>
-      <section className="flex flex-wrap justify-between gap-8 mt-4 sm:mt-8">
+      <p className="text-2xl font-bold mb-4 sm:mb-8">
+        System Analyst / Поток 3
+      </p>
+      <section className="flex flex-wrap justify-between gap-8">
         <div className="flex justify-between flex-wrap md:flex-nowrap gap-4 gap-x-16">
           <div className="">
             <p className="font-medium text-lg mb-2 text-nowrap">

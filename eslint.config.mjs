@@ -91,7 +91,7 @@ const eslintConfig = [
             },
             {
               from: ['entities'],
-              allow: ['shared']
+              allow: ['entities', 'shared']
             },
             {
               from: ['shared'],

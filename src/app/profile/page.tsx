@@ -1,10 +1,17 @@
 import { cookies } from 'next/headers'
+import Image from 'next/image'
 import { redirect } from 'next/navigation'
 
 import { ProfileSidebar } from '@/features/(profile)'
 import { ProfileFormProvider } from '@/features/(profile)'
 import { isUserType } from '@/shared/lib'
-import { ProfileContent } from '@/widgets/(profile)'
+import { ProfileFormsWidget } from '@/widgets/(profile)'
+
+const userTypes = {
+  intern: 'Стажер',
+  mentor: 'Наставник',
+  admin: 'Администратор'
+}
 
 const page = async ({}) => {
   const cookieStore = await cookies()
@@ -17,12 +24,24 @@ const page = async ({}) => {
   }
 
   return (
-    <div className="bg-black min-h-screen text-white px-6 sm:px-12 md:px-24 py-10 flex flex-col md:flex-row gap-8 sm:gap-12 md:gap-8 lg:gap-16">
+    <main className="bg-black min-h-screen text-white px-6 sm:px-12 md:px-24 py-10 flex flex-col gap-8">
       <ProfileFormProvider>
-        <ProfileSidebar />
-        <ProfileContent userType={userType} />
+        <section className="flex flex-col-reverse md:flex-row gap-8">
+          <ProfileSidebar />
+          <div className="flex items-center gap-4 h-36">
+            <Image src="/avatar.svg" width={100} height={100} alt="avatar" />
+            <p className="flex flex-col">
+              <span className="text-2xl font-bold">Иван Иванов</span>
+              <span className="text-base">{userTypes[userType]}</span>
+            </p>
+          </div>
+        </section>
+        <section className="flex gap-8">
+          <div className="max-w-72 w-full hidden lg:block"></div>
+          <ProfileFormsWidget />
+        </section>
       </ProfileFormProvider>
-    </div>
+    </main>
   )
 }
 
